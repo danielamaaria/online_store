@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     # Custom apps
     'store',
     'users',
+    # Third party apps.
+    'bootstrap4',
 
     # Django apps
     'django.contrib.admin',
