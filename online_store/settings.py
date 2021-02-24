@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Custom apps
     'store',
+    'users',
 
     # Django apps
     'django.contrib.admin',
