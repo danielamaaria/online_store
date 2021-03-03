@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.core.validators import validate_comma_separated_integer_list
 from django.db import models
 
@@ -49,4 +50,5 @@ class Book(models.Model):
 class Cart(models.Model):
     """A model which describes the book list before purchasing."""
 
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     books = models.CharField(max_length=100, validators=[validate_comma_separated_integer_list])
