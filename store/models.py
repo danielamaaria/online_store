@@ -1,3 +1,4 @@
+from django.core.validators import validate_comma_separated_integer_list
 from django.db import models
 
 
@@ -15,7 +16,7 @@ class Category(models.Model):
     """A model which describes the genre of a book. E.G. Drama, Comedy..."""
 
     name = models.CharField(max_length=200)
-    is_child = models.BooleanField(default=True)  # It means this category has books referencing it.
+    is_child = models.BooleanField(default=True)  # It means this category is not parent
     parent_category = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
@@ -34,7 +35,7 @@ class Book(models.Model):
     """
 
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ManyToManyField(Category, editable=True)
     title = models.CharField(max_length=200)
     price = models.FloatField(default=0.0)
 
@@ -43,3 +44,9 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title + ' By ' + str(self.author)
+
+
+class Cart(models.Model):
+    """A model which describes the book list before purchasing."""
+
+    books = models.CharField(max_length=100, validators=[validate_comma_separated_integer_list])
