@@ -5,7 +5,7 @@
     <div class="row d-flex justify-content-center">
         <div class="p-5 col-12 col-sm-10 col-md-8 col-lg-5 bg-light">
 
-            <h1 class="display-4 text-center">Login</h1>
+            <h1 class="display-4 text-center">Sign In</h1>
 
             {% if form.errors %}
                 <p>Your username and password didn't match. Please try again.</p>
@@ -20,7 +20,7 @@
                     </div>
                 {% endbuttons %}
                 <input type="hidden" name="next" value="{% url 'store:index' %}"/>
-                <p class="text-center">Need an account? <a href="#">Register</a></p>
+                <p class="text-center">Need an account? <a href="{% url 'users:register' %}">Register</a></p>
             </form>
         </div>
     </div>

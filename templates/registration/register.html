@@ -1,15 +1,26 @@
 {% extends "store/base.html" %}
 {% load bootstrap4 %}
-{% block page_header %}
-    <h2>Create new account</h2>
-{% endblock page_header %}
+
 {% block content %}
-    <form action="{% url 'users:register' %}" class="form" method="post">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        {% buttons %}
-            <button class="btn btn-primary" name="submit">Register</button>
-        {% endbuttons %}
-        <input name="next" type="hidden" value="{% url 'store:index' %}"/>
+    <div class="row d-flex justify-content-center">
+        <div class="p-5 col-12 col-sm-10 col-md-8 col-lg-5 bg-light">
+            <h1 class="display-4 text-center">Sign Up</h1>
+
+            {% if form.errors %}
+                <p>Something went wrong.</p>
+            {% endif %}
+
+            <form action="{% url 'users:register' %}" class="form" method="post">
+            {% csrf_token %}
+                {% bootstrap_form form %}
+            {% buttons %}
+                <div class="col-md-12 text-center">
+                        <button class="btn btn-primary text-center" style="width: 100px;" name="submit">Register</button>
+                    </div>
+            {% endbuttons %}
+            <input name="next" type="hidden" value="{% url 'store:index' %}"/>
+            <p class="text-center">Already have an account? <a href="{% url 'users:login' %}">Sign In</a></p>
     </form>
+        </div>
+    </div>
 {% endblock content %}
