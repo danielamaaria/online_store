@@ -39,6 +39,7 @@ class Book(models.Model):
     category = models.ManyToManyField(Category, editable=True)
     title = models.CharField(max_length=200)
     price = models.FloatField(default=0.0)
+    date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name_plural = 'books'

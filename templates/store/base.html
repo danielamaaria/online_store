@@ -21,9 +21,12 @@
             data-target="#navbarCollapse" aria-controls="navbarCollapse"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span></button>
+
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
+                <a class="nav-link" href="{% url 'store:books' %}">Books</a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
@@ -46,9 +49,9 @@
 </nav>
 <main role="main" class="container">
     <div class="container">
-    <div style="justify-content: center;">
-        {% block content %}{% endblock content %}
-    </div>
+        <div style="justify-content: center;">
+            {% block content %}{% endblock content %}
+        </div>
 
     </div>
 </main>
