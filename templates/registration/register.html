@@ -8,7 +8,7 @@
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
-        <button class="btn btn-primary" name="submit">Register</button>
+            <button class="btn btn-primary" name="submit">Register</button>
         {% endbuttons %}
         <input name="next" type="hidden" value="{% url 'store:index' %}"/>
     </form>

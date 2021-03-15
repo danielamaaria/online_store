@@ -1,4 +1,13 @@
 {% extends "store/base.html" %}
 {% block content %}
-    <p>Bookstore gives you an online shopping cart and point-of-sale system.</p>
+   <div class="jumbotron">
+    <h1 class="display-4">Book Shop</h1>
+    <p class="lead">Search for your favorite book, add it to your wish list and buy it.</p>
+
+    {% if user.is_authenticated %}
+    {% else %}
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+       role="button">Register &raquo;</a>
+    {% endif %}
+</div>
 {% endblock content %}
