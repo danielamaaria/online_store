@@ -13,9 +13,20 @@ def index(request):
 
 @login_required
 def books(request):
-    """Show all available books"""
+    """Show all available books."""
     book_list: [] = Book.objects.order_by('date_added')
     context = {
         "books": book_list
     }
     return render(request, 'store/books.html', context)
+
+
+@login_required
+def details(request, id):
+    """Show all available details of a book."""
+    book = Book.objects.filter(pk=id)
+    if not book:
+        raise FileNotFoundError
+
+    context = {"book": book[0]}
+    return render(request, 'store/details.html', context)
