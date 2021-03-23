@@ -40,6 +40,8 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     price = models.FloatField(default=0.0)
     date_added = models.DateTimeField(auto_now_add=True)
+    description = models.TextField(max_length=150)
+    url=models.URLField(default='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.publicdomainpictures.net%2Fpictures%2F60000%2Fnahled%2Fopen-book-1378562978Vki.jpg&f=1&nofb=1')
 
     class Meta:
         verbose_name_plural = 'books'

@@ -10,10 +10,12 @@
 
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?{% now "U" %}'"/>
 </head>
-<body>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
+<body class="main-background">
+<nav class="navbar navbar-expand-md navbar-light bg-light border">
     <a class="navbar-brand" href="{% url 'store:index' %}">
         Book store</a>
 
@@ -44,15 +46,15 @@
                     <a class="nav-link" href="{% url 'users:login' %}">Log in</a></li>
             {% endif %}
         </ul>
-
     </div>
 </nav>
 <main role="main" class="container">
     <div class="container">
-        <div style="justify-content: center;">
-            {% block content %}{% endblock content %}
-        </div>
+        <div class="justify-content-center">
+            {% block content %}
 
+            {% endblock content %}
+        </div>
     </div>
 </main>
 </body>
