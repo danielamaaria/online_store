@@ -24,9 +24,7 @@ class Category(models.Model):
         verbose_name_plural = 'categories'
 
     def __str__(self):
-        if self.is_child:
-            return self.name + ' (child)'
-        return self.name + ' (parent)'
+        return self.name
 
 
 class Book(models.Model):
