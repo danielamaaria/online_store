@@ -5,3 +5,28 @@
 .login_register {
     margin-top: 50px;
 }
+
+/* Books page */
+
+div.scroll-menu {
+    background-color: transparent;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scroll-menu {
+    background-color: transparent;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.zoom-image {
+    cursor: pointer;
+    width: 160px;
+    height: auto;
+    transition: transform .2s;
+}
+
+.zoom-image:hover {
+    transform: scale(1.05);
+}
