@@ -1,7 +1,3 @@
-.main-background {
-    background-color: aquamarine;
-}
-
 .login_register {
     margin-top: 50px;
 }
@@ -29,4 +25,27 @@ div.scroll-menu {
 
 .zoom-image:hover {
     transform: scale(1.05);
+}
+
+/* The color used throughout the app. */
+.application-color {
+    color: orange;
+}
+
+.btn-outline-primary {
+    border-style: none;
+    color: gray;
+    width: 100px;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:visited{
+    background-color: orange !important;
+    border-color: orange !important;
+}
+
+/* The color used for the main background panel. */
+.main-background {
+    background-color: orange;
 }
