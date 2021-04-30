@@ -6,7 +6,7 @@
 
     {% if user.is_authenticated %}
     {% else %}
-    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+    <a class="btn btn-lg btn-danger" href="{% url 'users:register' %}"
        role="button">Register &raquo;</a>
     {% endif %}
 </div>
