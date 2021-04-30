@@ -29,7 +29,7 @@ div.scroll-menu {
 
 /* The color used throughout the app. */
 .application-color {
-    color: orange;
+    color: #B22222;
 }
 
 .btn-outline-primary {
@@ -41,11 +41,15 @@ div.scroll-menu {
 .btn-outline-primary:hover,
 .btn-outline-primary:active,
 .btn-outline-primary:visited{
-    background-color: orange !important;
-    border-color: orange !important;
+    background-color: #B22222 !important;
+    border-color: #B22222!important;
 }
 
 /* The color used for the main background panel. */
 .main-background {
-    background-color: orange;
+    background-color: #B22222;
+}
+
+.display-5 {
+    color: #696969;
 }
