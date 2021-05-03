@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?{% now "U" %}'"/>
 </head>
 
-<body class="main-background">
-<nav class="navbar navbar-expand-md navbar-light bg-light border">
+<body class="main-background bg-light">
+<nav class="navbar navbar-expand-md bg-white navbar-light border">
     <a style="color: grey; font-size: x-large;" class="navbar-brand" href="{% url 'store:index' %}">
         O<span class="application-color">nline</span>
         B<span class="application-color">ook</span>
@@ -36,10 +36,10 @@
                 <li class="nav-item mx-1">
                     <a class="btn btn-outline-danger" href="{% url 'store:index' %}">Home</a>
                 </li>
-                 <li class="nav-item mx-1">
+                <li class="nav-item mx-1">
                     <a class="btn btn-outline-danger" href="{% url 'store:books' %}">Products</a>
                 </li>
-                 <li class="nav-item mx-1">
+                <li class="nav-item mx-1">
                     <a class="btn btn-outline-danger" href="#">Cart</a>
                 </li>
                 <li class="nav-item mx-1">
@@ -47,8 +47,8 @@
                 </li>
 
 
-{#                <div style="width: 1px; height: 19px; margin-top: 12px; margin-right: 11px; margin-left: 3px;#}
-{#                background-color: grey;"></div>#}
+                {#                <div style="width: 1px; height: 19px; margin-top: 12px; margin-right: 11px; margin-left: 3px;#}
+                {#                background-color: grey;"></div>#}
 
                 <li class="nav-item">
                     <span class="navbar-text">Hello, {{ user.username }}.</span>

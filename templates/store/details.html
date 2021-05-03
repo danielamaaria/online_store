@@ -1,5 +1,46 @@
 {% extends "store/base.html" %}
+{% load bootstrap4 %}
 
-{%  block content %}
-    <p>Details</p>
+{% block content %}
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col mx-auto">
+                <div class="card shadow">
+                    <div class="row">
+                        <div class="col-12 col-lg-5 ml-2 mt-2">
+                            <img class="image-details" src={{ book.url }}>
+                        </div>
+
+                        <div class="col-12 col-lg-6 ml-2 mt-2">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                            <p class="card-text">${{ book.price }}</p>
+                            <a href="#" class="btn btn-success text-align-right">Add to cart</a>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex mt-1">
+                        <label class="ml-2"
+                               style="font-weight: bold; margin-top: 10px; font-size: large">Genres:</label>
+                        <div aria-label="breadcrumb">
+                            <ol class="breadcrumb bg-transparent">
+                                {% for category in book.category.all %}
+                                    <li class="breadcrumb-item active" aria-current="page"><a
+                                            href="#">{{ category }}</a></li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="ml-2">
+                        <label for="description" style="font-weight: bold; font-size: large">Description:</label>
+                        <p id="description" name="description">{{ book.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock content %}

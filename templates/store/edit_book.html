@@ -1,0 +1,33 @@
+{% extends "store/base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-5">
+            <form action="{% url 'store:edit_book' book.id %}" class="form" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+
+                {% buttons %}
+                    <button style="width: 130px;" class="btn btn-primary" name="submit">
+                        Save</button>
+                {% endbuttons %}
+            </form>
+
+            <form action="{% url 'store:buy_book' book.id %}" method="post">
+                {% csrf_token %}
+                {% buttons %}
+                    <button style="width: 130px;" class="btn btn-success"
+                            onclick="return confirm('Are you sure you want to buy {{ book.id }}?')" name="submit">
+                        Buy
+                    </button>
+                {% endbuttons %}
+            </form>
+        </div>
+
+        <div class="col-6">
+            <img class="image-details m-2" src="{{ book.url }}"
+                 alt="Card image cap" title={{ book.title }}>
+        </div>
+    </div>
+{% endblock content %}

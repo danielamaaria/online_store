@@ -23,8 +23,14 @@ div.scroll-menu {
     transition: transform .2s;
 }
 
+.image-details {
+    width: 200px;
+    height: auto;
+}
+
 .zoom-image:hover {
     transform: scale(1.05);
+    border: #B22222 ridge medium;
 }
 
 /* The color used throughout the app. */
@@ -47,7 +53,7 @@ div.scroll-menu {
 
 /* The color used for the main background panel. */
 .main-background {
-    background-color: #B22222;
+    background-color: white;
 }
 
 .display-5 {

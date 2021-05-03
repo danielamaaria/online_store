@@ -1,13 +1,13 @@
 {% extends "store/base.html" %}
 {% block content %}
-   <div class="jumbotron" style="margin-top: 15px;">
-    <h1 class="display-4">Book Store</h1>
-    <p class="lead">Search for your favorite book, add it to your wish list and buy it.</p>
+    <div class="jumbotron" style="margin-top: 15px; background-color: #B22222; color: white;">
+        <h1 class="display-4">Online Book Store</h1>
+        <p class="lead">Search for your favorite book, add it to your wish list and buy it.</p>
 
-    {% if user.is_authenticated %}
-    {% else %}
-    <a class="btn btn-lg btn-danger" href="{% url 'users:register' %}"
-       role="button">Register &raquo;</a>
-    {% endif %}
-</div>
+        {% if user.is_authenticated %}
+        {% else %}
+            <a class="btn btn-lg btn-danger" href="{% url 'users:register' %}"
+               role="button">Register &raquo;</a>
+        {% endif %}
+    </div>
 {% endblock content %}
