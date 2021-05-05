@@ -12,7 +12,6 @@ def index(request):
     return render(request, 'store/index.html', context)
 
 
-@login_required
 def books(request):
     """Show all available books."""
     book_list: [] = Book.objects.all().order_by('date_added')
@@ -27,10 +26,10 @@ def books(request):
 
 @login_required
 def buy_book(request, book_id):
-    return redirect('/store/index.html')
+    # Todo: Add book to cart.
+    return redirect('/books/')
 
 
-@login_required
 def details(request, book_id):
     context = {'book': Book.objects.get(id=book_id)}
 

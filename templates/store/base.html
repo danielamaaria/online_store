@@ -35,19 +35,20 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-1">
+                <a class="btn btn-outline-danger" href="{% url 'store:index' %}">Home</a>
+            </li>
+            <li class="nav-item mx-1">
+                <a class="btn btn-outline-danger" href="{% url 'store:books' %}">Products</a>
+            </li>
+            <li class="nav-item mx-1">
+                <a class="btn btn-outline-danger" href="#">About me</a>
+            </li>
             {% if user.is_authenticated %}
-                <li class="nav-item mx-1">
-                    <a class="btn btn-outline-danger" href="{% url 'store:index' %}">Home</a>
-                </li>
-                <li class="nav-item mx-1">
-                    <a class="btn btn-outline-danger" href="{% url 'store:books' %}">Products</a>
-                </li>
                 <li class="nav-item mx-1">
                     <a class="btn btn-outline-danger" href="#">Cart</a>
                 </li>
-                <li class="nav-item mx-1">
-                    <a class="btn btn-outline-danger" href="#">About me</a>
-                </li>
+
 
                 {#                <li class="nav-item">#}
                 {#                    <span class="navbar-text">{{ user.username }}.</span>#}
