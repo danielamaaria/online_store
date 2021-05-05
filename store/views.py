@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from store.forms import BookForm
-from store.models import Book
+from store.models import Book, Category
 
 
 def index(request):
@@ -15,9 +15,12 @@ def index(request):
 @login_required
 def books(request):
     """Show all available books."""
-    book_list: [] = Book.objects.order_by('date_added')
+    book_list: [] = Book.objects.all().order_by('date_added')
+    category_list: [] = Category.objects.all()
+
     context = {
-        "books": book_list
+        "books": book_list,
+        "categories": category_list
     }
     return render(request, 'store/books.html', context)
 

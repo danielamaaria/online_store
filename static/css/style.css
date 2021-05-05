@@ -30,7 +30,7 @@ div.scroll-menu {
 
 .zoom-image:hover {
     transform: scale(1.05);
-    border: #B22222 ridge medium;
+    border: #B22222 ridge 1px;
 }
 
 /* The color used throughout the app. */
