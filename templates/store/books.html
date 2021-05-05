@@ -3,7 +3,12 @@
 {% block content %}
     {% for category in categories %}
         <div class="row text-center justify-content-center">
-            <h1 class="display-5 mr-auto mx-auto" style="color: #B22222">{{ category.name }}</h1>
+            {% if category.name == 'Fiction' or category.name == 'Nonfiction' %}
+                <h1 class="display-5 mr-auto mx-auto" style="color: black; font-weight: bolder"><< {{ category.name }}
+                    >></h1>
+            {% else %}
+                <h1 class="display-5 mr-auto mx-auto" style="color: #B22222">{{ category.name }}</h1>
+            {% endif %}
             <div class="scroll-menu container-fluid">
 
                 {% for book in books %}

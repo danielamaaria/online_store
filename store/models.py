@@ -38,7 +38,8 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     price = models.FloatField(default=0.0)
     date_added = models.DateTimeField(auto_now_add=True)
-    description = models.TextField(max_length=150)
+    first_published = models.IntegerField(default=1900)
+    description = models.TextField(max_length=500)
     url=models.URLField(default='https://digitalsynopsis.com/wp-content/uploads/2016/06/negative-space-design-art-illustration-ads-30.jpg')
 
     class Meta:
