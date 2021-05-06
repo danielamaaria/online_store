@@ -44,6 +44,9 @@ def populate_database(apps, schema_editor):
     author2 = Author.objects.create(name='C.S.', surname='Lewis')
     author3 = Author.objects.create(name='Jack', surname='Higgins')
     author4 = Author.objects.create(name='Dan', surname='Brown')
+    author5 = Author.objects.create(name='Louise', surname='Hay')
+    author6 = Author.objects.create(name='Agatha', surname='Christie')
+    author7 = Author.objects.create(name='Stephen', surname='Hawking')
 
     # Books
     book1 = Book.objects.create(author=author1,
@@ -77,6 +80,30 @@ def populate_database(apps, schema_editor):
                                 description='While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a trail of clues hidden in the works of Leonardo da Vinci—clues visible for all to see and yet ingeniously disguised by the painter. Even more startling, the late curator was involved in the Priory of Sion—a secret society whose members included Sir Isaac Newton, Victor Hugo, and Da Vinci—and he guarded a breathtaking historical secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle—while avoiding the faceless adversary who shadows their every move—the explosive, ancient truth will be lost forever.',
                                 url='https://images-na.ssl-images-amazon.com/images/I/41KuPr7kpZL._SX277_BO1,204,203,200_.jpg')
     book4.category.set([parent1, category11, category7])
+
+    book5 = Book.objects.create(author=author5,
+                                title='You Can Heal Your Life',
+                                price='21.99',
+                                first_published=1984,
+                                description='Louise L. Hay, bestselling author, is an internationally known leader in the self-help field. Her key message is: "If we are willing to do the mental work, almost anything can be healed." The author has a great deal of experience and firsthand information to share about healing, including how she cured herself after being diagnosed with cancer.',
+                                url='https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/You_Can_Heal_Your_Life.jpg/220px-You_Can_Heal_Your_Life.jpg')
+    book5.category.set([parent2, category19])
+
+    book6 = Book.objects.create(author=author6,
+                                title='And Then There Were None',
+                                price='41.39',
+                                first_published=1939,
+                                description='Ten . . . Ten strangers are lured to an isolated island mansion off the Devon coast by a mysterious "U. N. Owen. Nine . . . At dinner a recorded message accuses each of them in turn of having a guilty secret, and by the end of the night one of the guests is dead. Eight . . . Stranded by a violent storm, and haunted by a nursery rhyme counting down one by one . . . as one by one . . . they begin to die. Seven . . .Which among them is the killer and will any of them survive?',
+                                url='https://upload.wikimedia.org/wikipedia/en/4/4a/And_Then_There_Were_None_First_Edition_Cover_1939.jpg')
+    book6.category.set([parent1, category11])
+
+    book7 = Book.objects.create(author=author7,
+                                title='A Brief History of Time',
+                                price='51.99',
+                                first_published=1988,
+                                description='A landmark volume in science writing by one of the great minds of our time, Stephen Hawking’s book explores such profound questions as: How did the universe begin—and what made its start possible? Does time always flow forward? Is the universe unending—or are there boundaries? Are there other dimensions in space? What will happen when it all ends? Told in language we all can understand, A Brief History of Time plunges into the exotic realms of black holes and quarks, of antimatter and “arrows of time,” of the big bang and a bigger God—where the possibilities are wondrous and unexpected. With exciting images and profound imagination, Stephen Hawking brings us closer to the ultimate secrets at the very heart of creation.',
+                                url='https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/BriefHistoryTime.jpg/220px-BriefHistoryTime.jpg')
+    book7.category.set([parent2, category24])
 
 
 class Migration(migrations.Migration):

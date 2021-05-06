@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for category in categories %}
-        <div class="row text-center justify-content-center">
+        <div class="row text-center justify-content-center" style="border-bottom: #B22222 1px dashed">
             {% if category.name == 'Fiction' or category.name == 'Nonfiction' %}
                 <h1 class="display-5 mr-auto mx-auto" style="color: black; font-weight: bolder"><< {{ category.name }}
                     >></h1>
