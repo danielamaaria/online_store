@@ -58,7 +58,7 @@ def populate_database(apps, schema_editor):
     book1.category.set([parent1, category5])
 
     book2 = Book.objects.create(author=author2,
-                                title='A Game of Thrones',
+                                title='The Lion the Witch and The Wardrobe',
                                 price='30',
                                 first_published=1960,
                                 description='Master storyteller C.S. Lewis introduces us to the magical world of Narnia as Lucy, Edmund, Peter, and Susan enter it through a wardrobe in their uncle’s house. Edmund encounters the White Witch, who convinces him to betray his siblings, but the Great Lion Aslan comes to their rescue—and that of the whole world of Narnia.',

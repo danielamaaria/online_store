@@ -37,6 +37,7 @@ class Book(models.Model):
     category = models.ManyToManyField(Category, editable=True)
     title = models.CharField(max_length=200)
     price = models.FloatField(default=0.0)
+    quantity = models.IntegerField(default=5)
     date_added = models.DateTimeField(auto_now_add=True)
     first_published = models.IntegerField(default=1900)
     description = models.TextField(max_length=500)
@@ -62,7 +63,7 @@ class Cart(models.Model):
     book_orders = models.ManyToManyField(BookOrder, editable=True)
 
 
-class Contact(models.Model):
+class OrderContact(models.Model):
     """A model which describes an address and other contact info."""
 
     class Meta:
@@ -87,4 +88,4 @@ class Order(models.Model):
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     books = models.ManyToManyField(Book, editable=True)
-    contact = models.ForeignKey(Contact, on_delete=models.DO_NOTHING)
+    contact = models.ForeignKey(OrderContact, on_delete=models.DO_NOTHING)
