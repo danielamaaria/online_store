@@ -30,9 +30,9 @@ class OrderContactForm(forms.ModelForm):
         labels = {'street': 'Street',
                   'number': 'Nr.',
                   'city': 'City',
-                  'bl': 'Bl.',
-                  'sc': 'Sc.',
-                  'ap': 'Ap.',
+                  'bl': 'Bl. (Optional)',
+                  'sc': 'Sc. (Optional)',
+                  'ap': 'Ap. (Optional)',
                   'county': 'County',
                   'phone': 'Contact Phone',
                   'email': 'Email (Optional)'}

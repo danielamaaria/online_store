@@ -120,6 +120,10 @@ def add_order(request):
     # Decrement the quantity of remained books to purchase.
     for book_order in cart_obj.book_orders.all():
         book = book_order.book
+
+        if book.quantity < book_order.quantity:
+            raise Http404
+
         book.quantity = book.quantity - book_order.quantity
         book.save()
 

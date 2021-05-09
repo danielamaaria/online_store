@@ -22,7 +22,8 @@
             <div class="col">
                 <p><span style="font-weight: bold">Title:</span> {{ book_order.book }}</p>
                 <p><span style="font-weight: bold">Author:</span> {{ book_order.book.author }}</p>
-                <p><span style="font-weight: bold">Quantity:</span> {{ book_order.quantity }}</p>
+                <p><span style="font-weight: bold">Quantity:</span> {{ book_order.quantity }}
+                    [<span style="font-weight: bold">{{ book_order.book.quantity }} book(s) left</span>]</p>
                 <p><span style="font-weight: bold">Cost:</span> ${{ book_order.price }}</p>
 
                 <form action="{% url 'store:delete_book_order' book_order.id %}" class="form" method="post">
