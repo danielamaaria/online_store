@@ -36,7 +36,8 @@ class Book(models.Model):
     category = models.ManyToManyField(Category, editable=True)
     title = models.CharField(max_length=200)
     price = models.FloatField(default=0.0)
-    quantity = models.IntegerField(default=5)
+
+    quantity = models.IntegerField(default=50)
     date_added = models.DateTimeField(auto_now_add=True)
     first_published = models.IntegerField(default=1900)
     description = models.TextField(max_length=500)
@@ -70,6 +71,17 @@ class Cart(models.Model):
         for book_order in self.book_orders.all():
             total = total + book_order.price()
         return total
+
+    def can_buy(self):
+        """
+        Checks if there are any out of stock books.
+
+        :return: False if purchase unavailable.
+        """
+        for book_order in self.book_orders.all():
+            if book_order.quantity > book_order.book.quantity:
+                return False
+        return True
 
 
 class OrderContact(models.Model):

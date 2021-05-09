@@ -5,9 +5,11 @@
         <div class="row mt-2">
             {% if cart.owner %}
                 <div class="col">
-                    <h1 class="display-5 mb-2">Total: ${{ cart.total }}</h1>
+                    <h1 class="display-5 mb-2">Total: ${{ cart.total|floatformat:2 }}</h1>
                 </div>
-                <a class="btn btn-success h-50 my-auto" href="{% url 'store:checkout' %}">To Checkout</a>
+                {% if cart.can_buy %}
+                    <a class="btn btn-success h-50 my-auto" href="{% url 'store:checkout' %}">To Checkout</a>
+                {% endif %}
             {% else %}
                 <div class="col">
                     <h1 class="display-5 mb-2">Total payed: ${{ cart.total }}</h1>
@@ -29,7 +31,13 @@
                 <p><span style="font-weight: bold">Author:</span> {{ book_order.book.author }}</p>
                 <p><span style="font-weight: bold">Quantity:</span> {{ book_order.quantity }}
                     {% if cart.owner %}
-                        [<span style="font-weight: bold">{{ book_order.book.quantity }} book(s) left</span>]
+                        {% if book_order.quantity > book_order.book.quantity %}
+                            [
+                            <span style="font-weight: bold; color: #B22222">{{ book_order.book.quantity }} book(s) left</span>
+                            ]
+                        {% else %}
+                            [<span style="font-weight: bold;">{{ book_order.book.quantity }} book(s) left</span>]
+                        {% endif %}
                     {% endif %}
                 </p>
                 <p><span style="font-weight: bold">Cost:</span> ${{ book_order.price }}</p>
