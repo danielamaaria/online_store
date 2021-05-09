@@ -82,12 +82,12 @@ class OrderContact(models.Model):
     street = models.CharField(max_length=200)
     number = models.IntegerField()
     city = models.CharField(max_length=200)
-    bl = models.CharField(max_length=50, null=True)
-    sc = models.CharField(max_length=50, null=True)
-    ap = models.CharField(max_length=50, null=True)
+    bl = models.CharField(max_length=50, null=True, blank=True)
+    sc = models.CharField(max_length=50, null=True, blank=True)
+    ap = models.CharField(max_length=50, null=True, blank=True)
     county = models.CharField(max_length=200)
     phone = models.CharField(max_length=100)
-    email = models.CharField(max_length=100, null=True)
+    email = models.EmailField(null=True, blank=True)
 
 
 class Order(models.Model):

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Book
+from .models import Book, OrderContact
 
 
 class BookForm(forms.ModelForm):
@@ -21,3 +21,18 @@ class BookForm(forms.ModelForm):
                   'author': 'Author',
                   'price': 'Price',
                   'category': 'Category'}
+
+
+class OrderContactForm(forms.ModelForm):
+    class Meta:
+        model = OrderContact
+        fields = ['street', 'number', 'city', 'bl', 'sc', 'ap', 'county', 'phone', 'email']
+        labels = {'street': 'Street',
+                  'number': 'Nr.',
+                  'city': 'City',
+                  'bl': 'Bl.',
+                  'sc': 'Sc.',
+                  'ap': 'Ap.',
+                  'county': 'County',
+                  'phone': 'Contact Phone',
+                  'email': 'Email (Optional)'}

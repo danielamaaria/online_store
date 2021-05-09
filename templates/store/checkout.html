@@ -1,5 +1,21 @@
 {% extends "store/base.html" %}
+{% load bootstrap4 %}
 
 {% block content %}
-    <p>Checkout!</p>
+      <div class="row justify-content-center order-form">
+        <div class="bg-white p-5 col-12 col-sm-10 col-md-8 col-lg-5 bg-light">
+
+            <h1 class="display-4 text-center">Order Form</h1>
+
+            <form method="post" action="{% url 'store:add_order' %}">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary text-center" style="width: 100px;" name="submit">Order</button>
+                    </div>
+                {% endbuttons %}
+            </form>
+        </div>
+    </div>
 {% endblock content %}

@@ -1,5 +1,7 @@
-.login_register {
-    margin-top: 50px;
+.login_register,
+.order-form {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Books page */

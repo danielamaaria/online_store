@@ -1,10 +1,11 @@
 from django.contrib.auth.decorators import login_required
+from django.db import transaction
 from django.http import Http404
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 
-from store.forms import BookForm
-from store.models import Book, Category, BookOrder, Cart
+from store.forms import BookForm, OrderContactForm
+from store.models import Book, Category, BookOrder, Cart, OrderContact, Order
 
 
 def index(request):
@@ -85,11 +86,40 @@ def delete_book_order(request, book_order_id):
 
 @login_required
 def checkout(request):
+    form = OrderContactForm()
+
+    context = {
+        'form': form
+    }
+    return render(request, 'store/checkout.html', context)
+
+
+@login_required
+def add_order(request):
     cart_obj = Cart.objects.get(owner=request.user)
-    # Create address.
-    # Create order.
-    # Set owner of cart to null after pressing order!!
-    return render(request, 'store/checkout.html')
+
+    order_contact = OrderContact.objects.create(
+        street=request.POST['street'],
+        number=request.POST['number'],
+        city=request.POST['city'],
+        bl=request.POST['bl'],
+        sc=request.POST['sc'],
+        ap=request.POST['ap'],
+        county=request.POST['county'],
+        phone=request.POST['phone'],
+        email=request.POST['email']
+    )
+
+    Order.objects.create(
+        owner=request.user,
+        cart=cart_obj,
+        contact=order_contact
+    )
+
+    cart_obj.owner = None
+    cart_obj.save()
+
+    return redirect('/books/')
 
 
 def check_owner(model, request):
