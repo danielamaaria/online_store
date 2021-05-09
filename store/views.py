@@ -28,6 +28,18 @@ def cart(request):
     return render(request, 'store/cart.html', context)
 
 
+def old_cart(request, cart_id):
+    try:
+        cart_obj = Cart.objects.get(pk=cart_id)
+    except ObjectDoesNotExist:
+        raise Http404
+
+    context = {
+        "cart": cart_obj
+    }
+    return render(request, 'store/cart.html', context)
+
+
 def books(request):
     """Show all available books."""
 
@@ -92,6 +104,16 @@ def checkout(request):
         'form': form
     }
     return render(request, 'store/checkout.html', context)
+
+
+@login_required
+def orders(request):
+    orders_obj = Order.objects.filter(owner=request.user)
+
+    context = {
+        'orders': orders_obj
+    }
+    return render(request, 'store/orders.html', context)
 
 
 @login_required

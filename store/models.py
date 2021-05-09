@@ -88,6 +88,9 @@ class OrderContact(models.Model):
     phone = models.CharField(max_length=100)
     email = models.EmailField(null=True, blank=True)
 
+    def __str__(self):
+        return self.street + ' ' + str(self.number) + ', ' + self.city
+
 
 class Order(models.Model):
     """A model which describes a previous purchase."""

@@ -35,6 +35,11 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <span class="navbar-text">Logged as {{ user.username }}</span>
+                </li>
+            {% endif %}
             <li class="nav-item mx-1">
                 <a class="btn btn-outline-danger" href="{% url 'store:index' %}">Home</a>
             </li>
@@ -48,11 +53,9 @@
                 <li class="nav-item mx-1">
                     <a class="btn btn-outline-danger" href="{% url 'store:cart' %}">Cart</a>
                 </li>
-
-
-                {#                <li class="nav-item">#}
-                {#                    <span class="navbar-text">{{ user.username }}.</span>#}
-                {#                </li>#}
+                <li class="nav-item mx-1">
+                    <a class="btn btn-outline-danger" href="{% url 'store:orders' %}">Orders</a>
+                </li>
                 <li class="nav-item mx-1">
                     <a class="btn btn-outline-danger" href="{% url 'users:logout' %}">Log out</a>
                 </li>

@@ -1,0 +1,15 @@
+{% extends "store/base.html" %}
+
+{% block content %}
+    {% for order in orders %}
+        <a href="{% url 'store:old_cart' order.cart.id %}">
+            <div class="row bg-white m-3 d-flex p-2">
+                <p>{{ order.date_added }} &nbsp;|&nbsp;</p>
+                <p>Payed: ${{ order.cart.total }} &nbsp;|&nbsp;</p>
+                <p>{{ order.contact }}</p>
+            </div>
+        </a>
+    {% empty %}
+        <p>No orders available...</p>
+    {% endfor %}
+{% endblock content %}

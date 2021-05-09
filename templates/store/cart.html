@@ -3,11 +3,16 @@
 {% block content %}
     {% if cart.total > 0 %}
         <div class="row mt-2">
-            <div class="col">
-                <h1 class="display-5 mb-2">Total: ${{ cart.total }}</h1>
-            </div>
-            <a class="btn btn-success h-50 my-auto" href="{% url 'store:checkout' %}">To Checkout
-            </a>
+            {% if cart.owner %}
+                <div class="col">
+                    <h1 class="display-5 mb-2">Total: ${{ cart.total }}</h1>
+                </div>
+                <a class="btn btn-success h-50 my-auto" href="{% url 'store:checkout' %}">To Checkout</a>
+            {% else %}
+                <div class="col">
+                    <h1 class="display-5 mb-2">Total payed: ${{ cart.total }}</h1>
+                </div>
+            {% endif %}
         </div>
     {% endif %}
 
@@ -23,20 +28,25 @@
                 <p><span style="font-weight: bold">Title:</span> {{ book_order.book }}</p>
                 <p><span style="font-weight: bold">Author:</span> {{ book_order.book.author }}</p>
                 <p><span style="font-weight: bold">Quantity:</span> {{ book_order.quantity }}
-                    [<span style="font-weight: bold">{{ book_order.book.quantity }} book(s) left</span>]</p>
+                    {% if cart.owner %}
+                        [<span style="font-weight: bold">{{ book_order.book.quantity }} book(s) left</span>]
+                    {% endif %}
+                </p>
                 <p><span style="font-weight: bold">Cost:</span> ${{ book_order.price }}</p>
 
-                <form action="{% url 'store:delete_book_order' book_order.id %}" class="form" method="post">
-                    {% csrf_token %}
+                {% if cart.owner %}
+                    <form action="{% url 'store:delete_book_order' book_order.id %}" class="form" method="post">
+                        {% csrf_token %}
 
-                    <button type="submit" class="btn btn-danger">Remove
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                             class="bi bi-x-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                    </button>
-                </form>
+                        <button type="submit" class="btn btn-danger">Remove
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-x-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </button>
+                    </form>
+                {% endif %}
             </div>
         </div>
     {% empty %}
