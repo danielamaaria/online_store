@@ -63,7 +63,7 @@ class BookOrder(models.Model):
 
 class Cart(models.Model):
     """A model which describes the book list before purchasing."""
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     book_orders = models.ManyToManyField(BookOrder, editable=True)
 
     def total(self):
@@ -97,5 +97,5 @@ class Order(models.Model):
         verbose_name_plural = 'orders'
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    books = models.ManyToManyField(Book, editable=True)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     contact = models.ForeignKey(OrderContact, on_delete=models.DO_NOTHING)

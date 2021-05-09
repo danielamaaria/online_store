@@ -41,11 +41,11 @@ def books(request):
 
 
 def add_to_order(request, book_id):
-    cart = Cart.objects.get(owner=request.user)
+    cart_obj = Cart.objects.get(owner=request.user)
     quantity = int(request.POST['quantity'])
 
     # Increment the quantity for existing book in cart.
-    for book_order in cart.book_orders.all():
+    for book_order in cart_obj.book_orders.all():
         if book_order.book.id == book_id:
             book_order.quantity = book_order.quantity + quantity
             book_order.save()
@@ -54,7 +54,7 @@ def add_to_order(request, book_id):
     # Create new book order and add it to cart.
     book = Book.objects.get(pk=book_id)
     book_order = BookOrder.objects.create(book=book, quantity=quantity)
-    cart.book_orders.add(book_order)
+    cart_obj.book_orders.add(book_order)
 
 
 @login_required
@@ -81,6 +81,15 @@ def buy_book(request, book_id):
 def delete_book_order(request, book_order_id):
     BookOrder.objects.get(pk=book_order_id).delete()
     return redirect('/cart/')
+
+
+@login_required
+def checkout(request):
+    cart_obj = Cart.objects.get(owner=request.user)
+    # Create address.
+    # Create order.
+    # Set owner of cart to null after pressing order!!
+    return render(request, 'store/checkout.html')
 
 
 def check_owner(model, request):
