@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 
 from store.forms import BookForm
-from store.models import Book, Category, User, Cart
+from store.models import Book, Category, BookOrder, Cart
 
 
 def index(request):
@@ -37,9 +37,18 @@ def buy_book(request, book_id):
 
     try:
         cart = Cart.objects.get(owner=request.user)
-        print(cart.books)
+        cart.books.add(BookOrder.objects.create(book=book_id, quantity=2))
+
+        print(cart.books.all())
+
+        return redirect('/books/')
     except ObjectDoesNotExist:
         Cart.objects.create(owner=request.user)
+
+    cart = Cart.objects.get(owner=request.user)
+    cart.books.add(BookOrder.objects.create(book=book_id, quantity=2))
+
+    print(cart.books.all())
 
     return redirect('/books/')
 

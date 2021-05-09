@@ -50,11 +50,16 @@ class Book(models.Model):
         return self.title + ' By ' + str(self.author)
 
 
+class BookOrder(models.Model):
+    """A model which holds the relation between the quantity and the purchased book."""
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+
+
 class Cart(models.Model):
     """A model which describes the book list before purchasing."""
-
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    books = models.ManyToManyField(Book, editable=True)
+    book_orders = models.ManyToManyField(BookOrder, editable=True)
 
 
 class Contact(models.Model):
