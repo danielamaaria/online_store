@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.core.validators import validate_comma_separated_integer_list
 from django.db import models
 
 
@@ -99,3 +98,4 @@ class Order(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     contact = models.ForeignKey(OrderContact, on_delete=models.DO_NOTHING)
+    date_added = models.DateTimeField(auto_now_add=True)
