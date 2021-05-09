@@ -95,6 +95,7 @@ def checkout(request):
 
 
 @login_required
+@transaction.atomic()
 def add_order(request):
     cart_obj = Cart.objects.get(owner=request.user)
 
@@ -116,6 +117,14 @@ def add_order(request):
         contact=order_contact
     )
 
+    # Decrement the quantity of remained books to purchase.
+    for book_order in cart_obj.book_orders.all():
+        book = book_order.book
+        book.quantity = book.quantity - book_order.quantity
+        book.save()
+
+    # Remove owner from the cart. This will make the app create another cart in case of a new purchase.
+    # The purchased carts will still exist.
     cart_obj.owner = None
     cart_obj.save()
 
