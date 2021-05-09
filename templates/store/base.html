@@ -21,7 +21,7 @@
             O<span class="application-color">nline</span>
             B<span class="application-color">ook</span>
             S<span class="application-color">tore</span></a>
-        <span class="small bg-dark p-0" style="margin-left: -20px; color: white">v0.3</span>
+        <span class="small bg-dark p-0" style="margin-left: -20px; color: white">v0.4</span>
     </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -46,7 +46,7 @@
             </li>
             {% if user.is_authenticated %}
                 <li class="nav-item mx-1">
-                    <a class="btn btn-outline-danger" href="#">Cart</a>
+                    <a class="btn btn-outline-danger" href="{% url 'store:cart' %}">Cart</a>
                 </li>
 
 

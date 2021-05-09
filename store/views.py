@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -13,8 +14,22 @@ def index(request):
     return render(request, 'store/index.html', context)
 
 
+def cart(request):
+    try:
+        cart_obj = Cart.objects.get(owner=request.user)
+    except ObjectDoesNotExist:
+        Cart.objects.create(owner=request.user)
+        cart_obj = Cart.objects.get(owner=request.user)
+
+    context = {
+        "cart": cart_obj
+    }
+    return render(request, 'store/cart.html', context)
+
+
 def books(request):
     """Show all available books."""
+
     book_list: [] = Book.objects.all().order_by('date_added')
     category_list: [] = Category.objects.all()
 
@@ -60,6 +75,18 @@ def buy_book(request, book_id):
         add_to_order(request, book_id)
 
     return redirect('/books/')
+
+
+@login_required
+def delete_book_order(request, book_order_id):
+    BookOrder.objects.get(pk=book_order_id).delete()
+    return redirect('/cart/')
+
+
+def check_owner(model, request):
+    """Raise exception if the punishment does not belong to current user."""
+    if model.owner != request.user:
+        raise Http404
 
 
 def details(request, book_id):

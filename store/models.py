@@ -56,11 +56,21 @@ class BookOrder(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     quantity = models.IntegerField()
 
+    # Calculate price of all books together.
+    def price(self):
+        return self.book.price * self.quantity
+
 
 class Cart(models.Model):
     """A model which describes the book list before purchasing."""
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     book_orders = models.ManyToManyField(BookOrder, editable=True)
+
+    def total(self):
+        total = 0.0
+        for book_order in self.book_orders.all():
+            total = total + book_order.price()
+        return total
 
 
 class OrderContact(models.Model):
