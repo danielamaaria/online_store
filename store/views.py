@@ -25,12 +25,12 @@ def books(request):
     return render(request, 'store/books.html', context)
 
 
-def add_to_order(request, book_id, quantity):
+def add_to_order(request, book_id):
     cart = Cart.objects.get(owner=request.user)
+    quantity = int(request.POST['quantity'])
 
     # Increment the quantity for existing book in cart.
     for book_order in cart.book_orders.all():
-        print(book_order)
         if book_order.book.id == book_id:
             book_order.quantity = book_order.quantity + quantity
             book_order.save()
@@ -44,22 +44,21 @@ def add_to_order(request, book_id, quantity):
 
 @login_required
 def buy_book(request, book_id):
-    '''
+    """
     Create new cart if there isn't one created yet.
     If there is a cart, add the book to it's list of book id's.
+    :param quantity:
     :param request:
     :param book_id:
     :return: Redirects to books screen
-    '''
+    """
 
     try:
-        add_to_order(request, book_id, 10)
-        print(Cart.objects.get(owner=request.user).book_orders.all())
-        return redirect('/books/')
+        add_to_order(request, book_id)
     except ObjectDoesNotExist:
         Cart.objects.create(owner=request.user)
-    add_to_order(request, book_id, 10)
-    print(Cart.objects.get(owner=request.user).book_orders.all())
+        add_to_order(request, book_id)
+
     return redirect('/books/')
 
 
