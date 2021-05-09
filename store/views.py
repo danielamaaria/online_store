@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.core.exceptions import ObjectDoesNotExist
 
 from store.forms import BookForm
-from store.models import Book, Category
+from store.models import Book, Category, User, Cart
 
 
 def index(request):
@@ -26,7 +27,20 @@ def books(request):
 
 @login_required
 def buy_book(request, book_id):
-    # Todo: Add book to cart.
+    '''
+    Create new cart if there isn't one created yet.
+    If there is a cart, add the book to it's list of book id's.
+    :param request:
+    :param book_id:
+    :return: Todo: Return something
+    '''
+
+    try:
+        cart = Cart.objects.get(owner=request.user)
+        print(cart.books)
+    except ObjectDoesNotExist:
+        Cart.objects.create(owner=request.user)
+
     return redirect('/books/')
 
 

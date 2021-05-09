@@ -40,7 +40,8 @@ class Book(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     first_published = models.IntegerField(default=1900)
     description = models.TextField(max_length=500)
-    url=models.URLField(default='https://digitalsynopsis.com/wp-content/uploads/2016/06/negative-space-design-art-illustration-ads-30.jpg')
+    url = models.URLField(
+        default='https://digitalsynopsis.com/wp-content/uploads/2016/06/negative-space-design-art-illustration-ads-30.jpg')
 
     class Meta:
         verbose_name_plural = 'books'
@@ -53,4 +54,32 @@ class Cart(models.Model):
     """A model which describes the book list before purchasing."""
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    books = models.CharField(max_length=100, validators=[validate_comma_separated_integer_list])
+    books = models.ManyToManyField(Book, editable=True)
+
+
+class Contact(models.Model):
+    """A model which describes an address and other contact info."""
+
+    class Meta:
+        verbose_name_plural = 'contacts'
+
+    street = models.CharField(max_length=200)
+    number = models.IntegerField()
+    city = models.CharField(max_length=200)
+    bl = models.CharField(max_length=50, null=True)
+    sc = models.CharField(max_length=50, null=True)
+    ap = models.CharField(max_length=50, null=True)
+    county = models.CharField(max_length=200)
+    phone = models.CharField(max_length=100)
+    email = models.CharField(max_length=100, null=True)
+
+
+class Order(models.Model):
+    """A model which describes a previous purchase."""
+
+    class Meta:
+        verbose_name_plural = 'orders'
+
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    books = models.ManyToManyField(Book, editable=True)
+    contact = models.ForeignKey(Contact, on_delete=models.DO_NOTHING)
