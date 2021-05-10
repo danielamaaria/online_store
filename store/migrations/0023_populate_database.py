@@ -47,7 +47,9 @@ def populate_database(apps, schema_editor):
     author5 = Author.objects.create(name='Louise', surname='Hay')
     author6 = Author.objects.create(name='Agatha', surname='Christie')
     author7 = Author.objects.create(name='Stephen', surname='Hawking')
-
+    author8 = Author.objects.create(name='Robert T.', surname='Kiyosaki')
+    author9 = Author.objects.create(name='James', surname='Rollins')
+    author10 = Author.objects.create(name='Minka Kent', surname='Kent')
     # Books
     book1 = Book.objects.create(author=author1,
                                 title='A Game of Thrones',
@@ -105,6 +107,29 @@ def populate_database(apps, schema_editor):
                                 url='https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/BriefHistoryTime.jpg/220px-BriefHistoryTime.jpg')
     book7.category.set([parent2, category24])
 
+    book8 = Book.objects.create(author=author8,
+                                title='Rich Dad Poor Dad',
+                                price='31.99',
+                                first_published=2017,
+                                description='The #1 Personal Finance book of all time, Robert Kiyosaki shares the story of his two dad: his real father, whom he calls his poor dad, \' and the father of his best friend, the man who became his mentor and his rich dad.\' One man was well educated and an employee all his life, the other\'s education was street smarts" over traditional classroom education and he took the path of entrepreneurship a road that led him to become one of the wealthiest men in Hawaii. Robert\'s poor dad struggled financially all his life, and these two dads?these very different points of view of money, investing, and employment shaped Robert\'s thinking about money.',
+                                url='https://images-na.ssl-images-amazon.com/images/I/51fbpKt3-JL._SX331_BO1,204,203,200_.jpg')
+    book8.category.set([parent2, category17])
+
+    book9 = Book.objects.create(author=author9,
+                                title='Sandstorm',
+                                price='9.99',
+                                first_published=2004,
+                                description='Twenty years ago, a wealthy British financier disappeared near Ubar, the fabled lost city buried beneath the sands of Oman. Now, an expedition of scientists, led by the financier’s daughter, is finally setting off for the legendary metropolist to unlock the desert’s secrets. What they find, however, is more beautiful than they ever dreamed—and far deadlier. Within Ubar is a powerful energy source that could fuel the entire earth above—if it can be harnessed. ',
+                                url='https://prodimage.images-bn.com/pimages/9780062017581_p0_v2_s550x406.jpg')
+    book9.category.set([parent1, category2])
+
+    book10 = Book.objects.create(author=author10,
+                                title='The Watcher Girl',
+                                price='19.99',
+                                first_published=2007,
+                                description='A woman’s suspicions about her ex-boyfriend become a dangerous obsession in a twisting novel of psychological suspense by Washington Post and Wall Street Journal bestselling author Minka Kent.',
+                                url='https://images-na.ssl-images-amazon.com/images/I/81ZywiVlouL.SR160,240_BG243,243,243.jpg')
+    book10.category.set([parent1, category7])
 
 class Migration(migrations.Migration):
     dependencies = [

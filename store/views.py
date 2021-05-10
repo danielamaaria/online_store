@@ -187,3 +187,8 @@ def edit_book(request, book_id):
     # It means the form was just opened and must be loaded, not saved.
     context = {'book': book_obj, 'form': form}
     return render(request, 'store/edit_book.html', context)
+
+
+def about_page(request):
+    context = {'header': 'About this page'}
+    return render(request, 'store/about.html', context)

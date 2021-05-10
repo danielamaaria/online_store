@@ -20,4 +20,9 @@ class Migration(migrations.Migration):
             name='description',
             field=models.TextField(max_length=500),
         ),
+        migrations.AddField(
+            model_name='book',
+            name='quantity',
+            field=models.IntegerField(default=50),
+        ),
     ]
