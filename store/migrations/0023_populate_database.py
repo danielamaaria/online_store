@@ -23,6 +23,7 @@ def populate_database(apps, schema_editor):
     category10 = Category.objects.create(name='Romance', is_child=True, parent_category=parent1)
     category11 = Category.objects.create(name='Mystery', is_child=True, parent_category=parent1)
     category25 = Category.objects.create(name='War', is_child=True, parent_category=parent1)
+    category26 = Category.objects.create(name='Graphic novels comics & Manga', is_child=True, parent_category=parent1)
 
     parent2 = Category.objects.create(name='Nonfiction', is_child=False, parent_category=None)
     category12 = Category.objects.create(name='Art/architecture', is_child=True, parent_category=parent2)
@@ -49,7 +50,10 @@ def populate_database(apps, schema_editor):
     author7 = Author.objects.create(name='Stephen', surname='Hawking')
     author8 = Author.objects.create(name='Robert T.', surname='Kiyosaki')
     author9 = Author.objects.create(name='James', surname='Rollins')
-    author10 = Author.objects.create(name='Minka Kent', surname='Kent')
+    author10 = Author.objects.create(name='Minka', surname='Kent')
+    author11 = Author.objects.create(name='Darcy', surname='Coates')
+    author12 = Author.objects.create(name='Dean', surname='Koontz')
+
     # Books
     book1 = Book.objects.create(author=author1,
                                 title='A Game of Thrones',
@@ -130,6 +134,40 @@ def populate_database(apps, schema_editor):
                                 description='A woman’s suspicions about her ex-boyfriend become a dangerous obsession in a twisting novel of psychological suspense by Washington Post and Wall Street Journal bestselling author Minka Kent.',
                                 url='https://images-na.ssl-images-amazon.com/images/I/81ZywiVlouL.SR160,240_BG243,243,243.jpg')
     book10.category.set([parent1, category7])
+
+    book11 = Book.objects.create(author=author10,
+                                 title='When I Was You ',
+                                 price='15.99',
+                                 first_published=2004,
+                                 description='A stolen identity leads a woman down a dark and desperate path in a gripping novel of psychological suspense by Wall Street Journal bestselling author Minka Kent. After barely surviving a brutal attack, Brienne Dougray rarely leaves her house. Suffering from debilitating headaches and memory loss, she can rely only on her compassionate new tenant, Dr. Niall Emberlin, a welcome distraction from the discomfiting bubble that has become her existence.',
+                                 url='https://m.media-amazon.com/images/I/41TyAL9OHGL._SY346_.jpg')
+    book11.category.set([parent1, category7])
+
+    book12 = Book.objects.create(author=author11,
+                                 title='The Whispering Dead',
+                                 price='25.99',
+                                 first_published=2021,
+                                 description='The cemetery is alive with faint, spectral shapes, led by a woman who died before her time...and Keira, the only person who can see her, has become her new target. Determined to help put the ghost to rest, Keira digs into the spirit is past life with the help of unlikely new friends, and discovers a history of deception, ill-fated love, and murder.',
+                                 url='https://prodimage.images-bn.com/pimages/9781728239217_p0_v2_s550x406.jpg')
+    book12.category.set([parent1, category6])
+
+    book13 = Book.objects.create(author=author12,
+                                 title='Deeply Odd',
+                                 price='19.99',
+                                 first_published=2014,
+                                 description='The pistol appeared in his hand the way a dove appears in the hand of a good magician, as if it materialized out of thin air. “You think I won’t do it right here in the open. But you’d be surprised. . . . You’ll drop before you get the breath to scream.”  ',
+                                 url='https://prodimage.images-bn.com/pimages/9780553593082_p0_v1_s550x406.jpg')
+    book13.category.set([parent1, category6])
+
+    book14 = Book.objects.create(author=author12,
+                                 title='Odd Thomas',
+                                 price='19.99',
+                                 first_published=2012,
+                                 description='A stranger comes to Pico Mundo, accompanied by a horde of hyena-like shades who herald an imminent catastrophe. Aided by his soul mate, Stormy Llewellyn, and an unlikely community of allies that includes the King of Rock ’n’ Roll, Odd will race against time to thwart the gathering evil. His account of these shattering hours, in which past and present, fate and destiny, converge, is a testament by which to live—an unforgettable fable for our time destined to rank among Dean Koontz’s most enduring works.',
+                                 url='https://prodimage.images-bn.com/pimages/9780345533425_p0_v1_s550x406.jpg')
+    book14.category.set([parent1, category6])
+
+
 
 class Migration(migrations.Migration):
     dependencies = [
