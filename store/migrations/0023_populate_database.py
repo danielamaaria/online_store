@@ -13,17 +13,17 @@ def populate_database(apps, schema_editor):
     parent1 = Category.objects.create(name='Fiction', is_child=False, parent_category=None)
     category1 = Category.objects.create(name='Science & Fiction', is_child=True, parent_category=parent1)
     category2 = Category.objects.create(name='Action & adventure', is_child=True, parent_category=parent1)
-    category3 = Category.objects.create(name='Comic book', is_child=True, parent_category=parent1)
-    category4 = Category.objects.create(name='Crime', is_child=True, parent_category=parent1)
+    category3 = Category.objects.create(name='Historical Fiction', is_child=True, parent_category=parent1)
+    category4 = Category.objects.create(name='Poetry', is_child=True, parent_category=parent1)
     category5 = Category.objects.create(name='Fantasy', is_child=True, parent_category=parent1)
     category6 = Category.objects.create(name='Horror', is_child=True, parent_category=parent1)
     category7 = Category.objects.create(name='Thriller', is_child=True, parent_category=parent1)
     category8 = Category.objects.create(name='Satire', is_child=True, parent_category=parent1)
     category9 = Category.objects.create(name='Young adult', is_child=True, parent_category=parent1)
     category10 = Category.objects.create(name='Romance', is_child=True, parent_category=parent1)
-    category11 = Category.objects.create(name='Mystery', is_child=True, parent_category=parent1)
+    category11 = Category.objects.create(name='Mystery & Crime', is_child=True, parent_category=parent1)
     category25 = Category.objects.create(name='War', is_child=True, parent_category=parent1)
-    category26 = Category.objects.create(name='Graphic novels comics & Manga', is_child=True, parent_category=parent1)
+    category26 = Category.objects.create(name='Manga', is_child=True, parent_category=parent1)
 
     parent2 = Category.objects.create(name='Nonfiction', is_child=False, parent_category=None)
     category12 = Category.objects.create(name='Art/architecture', is_child=True, parent_category=parent2)
@@ -53,6 +53,20 @@ def populate_database(apps, schema_editor):
     author10 = Author.objects.create(name='Minka', surname='Kent')
     author11 = Author.objects.create(name='Darcy', surname='Coates')
     author12 = Author.objects.create(name='Dean', surname='Koontz')
+    author13 = Author.objects.create(name='Diana', surname='Gabaldon')
+    author14 = Author.objects.create(name='Sarah', surname='J. Maas')
+    author15 = Author.objects.create(name='Margaret', surname='Atwood')
+    author16 = Author.objects.create(name='V. E.', surname='Schwab')
+    author17 = Author.objects.create(name='David ', surname='Baldacci')
+    author18 = Author.objects.create(name='J.K.', surname='Rowling')
+    author19 = Author.objects.create(name='Lee', surname='Child')
+    author20 = Author.objects.create(name='Rosella', surname='Postorino')
+    author21 = Author.objects.create(name='Anita', surname='Abriel')
+    author22 = Author.objects.create(name='Marie', surname='Benedict')
+    author23 = Author.objects.create(name='Serena', surname='Burdick')
+    author24 = Author.objects.create(name='Sharon', surname='Kay Penman')
+    author25 = Author.objects.create(name='Courtney', surname='Peppernell')
+
 
     # Books
     book1 = Book.objects.create(author=author1,
@@ -167,7 +181,141 @@ def populate_database(apps, schema_editor):
                                  url='https://prodimage.images-bn.com/pimages/9780345533425_p0_v1_s550x406.jpg')
     book14.category.set([parent1, category6])
 
+    book15 = Book.objects.create(author=author13,
+                                 title='Go Tell the Bees That I Am Gone',
+                                 price='29.99',
+                                 first_published=2021,
+                                 description='The past may seem the safest place to be . . . but it is the most dangerous time to be alive...Jamie Fraser and Claire Randall were torn apart by the Jacobite Rising in 1746, and it took them twenty years to find each other again. Now the American Revolution threatens to do the same.',
+                                 url='https://prodimage.images-bn.com/pimages/9781101885680_p0_v2_s550x406.jpg')
+    book15.category.set([parent1, category1])
 
+    book16 = Book.objects.create(author=author14,
+                                 title='A Court of Silver Flames',
+                                 price='20.99',
+                                 first_published=2021,
+                                 description='After years following the epic journey of Feyre, her sister Nesta finally takes center stage in this highly anticipated tale all her own. Now that the war has finally ended, the mesmerizing A Court of Thorns and Roses saga continues, and fiery Nesta is ready to embrace her fight and fate.',
+                                 url='https://prodimage.images-bn.com/pimages/9781681196282_p0_v6_s550x406.jpg')
+    book16.category.set([parent1, category1])
+
+    book17 = Book.objects.create(author=author15,
+                                 title='The Handmaid\'s Tale',
+                                 price='20.99',
+                                 first_published=1998,
+                                 description='An instant classic and eerily prescient cultural phenomenon, from “the patron saint of feminist dystopian fiction” (The New York Times). Now an award-winning Hulu series starring Elizabeth Moss.',
+                                 url='https://prodimage.images-bn.com/pimages/9780385490818_p0_v5_s550x406.jpg')
+    book17.category.set([parent1, category1])
+
+    book18 = Book.objects.create(author=author14,
+                                 title='A Court of Frost and Starlight',
+                                 price='25.99',
+                                 first_published=2020,
+                                 description='Feyre, Rhysand, and their friends are still busy rebuilding the Night Court and the vastly altered world beyond, recovering from the war that changed everything. But Winter Solstice is finally approaching, and with it, the joy of a hard-earned reprieve. ',
+                                 url='https://prodimage.images-bn.com/pimages/9781635575620_p0_v2_s550x406.jpg')
+    book18.category.set([parent1, category1])
+
+    book19 = Book.objects.create(author=author16,
+                                 title='The Invisible Life of Addie LaRue',
+                                 price='22.99',
+                                 first_published=2020,
+                                 description='A Life No One Will Remember. A Story You Will Never Forget. France, 1714: in a moment of desperation, a young woman makes a Faustian bargain to live forever—and is cursed to be forgotten by everyone she meets.Thus begins the extraordinary life of Addie LaRue, and a dazzling adventure that will play out across centuries and continents, across history and art, as a young woman learns how far she will go to leave her mark on the world.',
+                                 url='https://prodimage.images-bn.com/pimages/9780765387561_p0_v4_s550x406.jpg')
+    book19.category.set([parent1, category1])
+
+    book20 = Book.objects.create(author=author17,
+                                 title='One Good Deed (An Archer Novel)',
+                                 price='25.99',
+                                 first_published=2019,
+                                 description='It\'s 1949. When war veteran Aloysius Archer is released from Carderock Prison, he is sent to Poca City on parole with a short list of do\'s and a much longer list of don\'ts: do report regularly to his parole officer, don\'t go to bars, certainly don\'t drink alcohol, do get a job -- and don\'t ever associate with loose women',
+                                 url='https://m.media-amazon.com/images/I/51oxNo6r0TL.jpg')
+    book20.category.set([parent1, category2])
+
+    book21 = Book.objects.create(author=author17,
+                                 title='A Gambling Man(An Archer Novel Book 2)',
+                                 price='29.99',
+                                 first_published=2021,
+                                 description='Along the way, Archer stops in Reno, where a stroke of fortune delivers him a wad of cash and an eye-popping blood-red 1939 Delahaye convertible—plus a companion for the final leg of the journey, an aspiring actress named Liberty Callahan who is planning to try her luck in Hollywood. But when the two arrive in Bay Town, California, Archer quickly discovers that the hordes of people who flocked there seeking fame and fortune landed in a false paradise that instead caters to their worst addictions and fears.',
+                                 url='https://m.media-amazon.com/images/I/514TEwu5BkS.jpg')
+    book21.category.set([parent1, category2])
+
+    book22 = Book.objects.create(author=author18,
+                                 title='Harry Potter and the Chamber of Secrets',
+                                 price='30.99',
+                                 first_published=2015,
+                                 description='Harry Potter\'s summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys by his friend Ron Weasley in a magical flying car! Back at Hogwarts School of Witchcraft and Wizardry for his second year, Harry hears strange whispers echo through empty corridors - and then the attacks start. Students are found as though turned to stone... Dobby\'s sinister predictions seem to be coming true.',
+                                 url='https://m.media-amazon.com/images/I/51TA3VfN8RL.jpg')
+    book22.category.set([parent1, category2])
+
+    book23 = Book.objects.create(author=author18,
+                                 title='Harry Potter and the Order of the Phoenix',
+                                 price='15.99',
+                                 first_published=2015,
+                                 description='Dark times have come to Hogwarts. After the Dementors\' attack on his cousin Dudley, Harry Potter knows that Voldemort will stop at nothing to find him. There are many who deny the Dark Lord\'s return, but Harry is not alone: a secret order gathers at Grimmauld Place to fight against the Dark forces. Harry must allow Professor Snape to teach him how to protect himself from Voldemort\'s savage assaults on his mind. But they are growing stronger by the day and Harry is running out of time.',
+                                 url='https://m.media-amazon.com/images/I/51-SI2+aQ2L.jpg')
+    book23.category.set([parent1, category2])
+
+    book24 = Book.objects.create(author=author19,
+                                 title='The Sentinel: (Jack Reacher 25)',
+                                 price='14.99',
+                                 first_published=2020,
+                                 description='Jack Reacher gets off the bus in a sleepy no-name town outside Nashville, Tennessee. He plans to grab a cup of coffee and move right along.Not going to happen.The town has been shut down by a cyber attack. At the centre of it all, whether he likes it or not, is Rusty Rutherford. He\'s an average IT guy, but he knows more than he thinks.',
+                                 url='https://m.media-amazon.com/images/I/51SSDIq7n8L.jpg')
+    book24.category.set([parent1, category2])
+
+    book25 = Book.objects.create(author=author20,
+                                 title='At the Wolf\'s Table: A Novel',
+                                 price='14.99',
+                                 first_published=2020,
+                                 description='They called it the Wolfsschanze, the Wolf’s Lair. “Wolf” was his nickname. As hapless as Little Red Riding Hood, I had ended up in his belly. A legion of hunters was out looking for him, and to get him in their grips they would gladly slay me as well.',
+                                 url='https://prodimage.images-bn.com/pimages/9781250179166_p0_v2_s550x406.jpg')
+    book25.category.set([parent1, category3])
+
+    book26 = Book.objects.create(author=author21,
+                                 title='The Light after the War',
+                                 price='24.99',
+                                 first_published=2020,
+                                 description='It is 1946 when Vera Frankel and her best friend Edith Ban arrive in Naples. Refugees from Hungary, they managed to escape from a train headed for Auschwitz and spent the rest of the war hiding on an Austrian farm. Now, the two young women must start new lives abroad. Armed with a letter of recommendation from an American officer, Vera finds work at the United States embassy where she falls in love with Captain Anton Wight.',
+                                 url='https://prodimage.images-bn.com/pimages/9781982122973_p0_v3_s550x406.jpg')
+    book26.category.set([parent1, category3])
+
+    book27 = Book.objects.create(author=author22,
+                                 title='The Other Einstein',
+                                 price='15.99',
+                                 first_published=2016,
+                                 description='n the tradition of Beatriz Williams and Paula McClain, Marie Benedict\'s The Other Einstein offers us a window into a brilliant, fascinating woman whose light was lost in Einstein\'s enormous shadow. This novel resurrects Einstein\'s wife, a brilliant physicist in her own right, whose contribution to the special theory of relativity is hotly debated. Was she simply Einstein\'s sounding board, an assistant performing complex mathematical equations? Or did she contribute something more?',
+                                 url='https://prodimage.images-bn.com/pimages/9781492637264_p0_v4_s550x406.jpg')
+    book27.category.set([parent1, category3])
+
+    book28 = Book.objects.create(author=author23,
+                                 title='The Girls with No Names',
+                                 price='12.99',
+                                 first_published=2020,
+                                 description='A beautiful tale of hope, courage, and sisterhood—inspired by the real House of Mercy and the girls confined there for daring to break the rules. Growing up in New York City in the 1910s, Luella and Effie Tildon realize that even as wealthy young women, their freedoms come with limits. But when the sisters discover a shocking secret about their father, Luella, the brazen elder sister, becomes emboldened to do as she pleases. Her rebellion comes with consequences, and one morning Luella is mysteriously gone.',
+                                 url='https://prodimage.images-bn.com/pimages/9781488050992_p0_v2_s550x406.jpg')
+    book28.category.set([parent1, category3])
+
+    book29 = Book.objects.create(author=author24,
+                                 title='The Land Beyond the Sea',
+                                 price='16.99',
+                                 first_published=2020,
+                                 description='The Kingdom of Jerusalem, also known as Outremer, is the land far beyond the sea. Baptized in blood when the men of the First Crusade captured Jerusalem from the Saracens in the early twelfth century, the kingdom defined an utterly new world, a land of blazing heat and a medley of cultures, a place where enemies were neighbors and neighbors became enemies.',
+                                 url='https://prodimage.images-bn.com/pimages/9781101621752_p0_v2_s550x406.jpg')
+    book29.category.set([parent1, category3])
+
+    book30 = Book.objects.create(author=author25,
+                                 title='Pillow Thoughts',
+                                 price='15.99',
+                                 first_published=2017,
+                                 description='Pillow Thoughts is a collection of poetry and prose about heartbreak, love, and raw emotions. It is divided into sections to read when you feel you need them most.',
+                                 url='https://prodimage.images-bn.com/pimages/9781449489755_p0_v1_s550x406.jpg')
+    book30.category.set([parent1, category4])
+
+    book31 = Book.objects.create(author=author25,
+                                 title='Pillow Thoughts II: Healing the Heart',
+                                 price='22.99',
+                                 first_published=2018,
+                                 description='Pillow Thoughts is a collection of poetry and prose about heartbreak, love, and raw emotions. It is divided into sections to read when you feel you need them most.Make a cup of tea and let yourself feel.',
+                                 url='https://prodimage.images-bn.com/pimages/9781449498047_p0_v2_s550x406.jpg')
+    book31.category.set([parent1, category4])
 
 class Migration(migrations.Migration):
     dependencies = [
