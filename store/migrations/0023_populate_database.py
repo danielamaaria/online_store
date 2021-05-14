@@ -69,11 +69,21 @@ def populate_database(apps, schema_editor):
     author26 = Author.objects.create(name='Morgan', surname='Harper Nichols')
     author27 = Author.objects.create(name='Mary', surname='Oliver')
     author28 = Author.objects.create(name='Timothy', surname='Zahn')
-    author29 = Author.objects.create(name='', surname='')
-    author30 = Author.objects.create(name='', surname='')
+    author29 = Author.objects.create(name='Stephen', surname='Graham Jones')
+    author30 = Author.objects.create(name='Brian', surname='Panowich')
+    author31 = Author.objects.create(name=' William', surname='W. Johnstone')
+    author32 = Author.objects.create(name='Anna', surname='North')
+    author33 = Author.objects.create(name='Gregory', surname='A. Freeman')
+    author34 = Author.objects.create(name='Adam', surname='Makos')
+    author35 = Author.objects.create(name='Masashi', surname='Kishimoto')
+    author36 = Author.objects.create(name='Tite', surname='Kubo')
+    author37 = Author.objects.create(name='Hajime ', surname='Isayama')
+    author38 = Author.objects.create(name='Colleen', surname='Hoover')
+    author39 = Author.objects.create(name='Christine', surname='Feehan')
 
 
     # Books
+    # Fiction
     book1 = Book.objects.create(author=author1,
                                 title='A Game of Thrones',
                                 price='60',
@@ -105,7 +115,7 @@ def populate_database(apps, schema_editor):
                                 description='While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a trail of clues hidden in the works of Leonardo da Vinci—clues visible for all to see and yet ingeniously disguised by the painter. Even more startling, the late curator was involved in the Priory of Sion—a secret society whose members included Sir Isaac Newton, Victor Hugo, and Da Vinci—and he guarded a breathtaking historical secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle—while avoiding the faceless adversary who shadows their every move—the explosive, ancient truth will be lost forever.',
                                 url='https://images-na.ssl-images-amazon.com/images/I/41KuPr7kpZL._SX277_BO1,204,203,200_.jpg')
     book4.category.set([parent1, category11, category7])
-
+    # Non-fiction
     book5 = Book.objects.create(author=author5,
                                 title='You Can Heal Your Life',
                                 price='21.99',
@@ -113,7 +123,7 @@ def populate_database(apps, schema_editor):
                                 description='Louise L. Hay, bestselling author, is an internationally known leader in the self-help field. Her key message is: "If we are willing to do the mental work, almost anything can be healed." The author has a great deal of experience and firsthand information to share about healing, including how she cured herself after being diagnosed with cancer.',
                                 url='https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/You_Can_Heal_Your_Life.jpg/220px-You_Can_Heal_Your_Life.jpg')
     book5.category.set([parent2, category19])
-
+    # Fiction
     book6 = Book.objects.create(author=author6,
                                 title='And Then There Were None',
                                 price='41.39',
@@ -122,6 +132,7 @@ def populate_database(apps, schema_editor):
                                 url='https://upload.wikimedia.org/wikipedia/en/4/4a/And_Then_There_Were_None_First_Edition_Cover_1939.jpg')
     book6.category.set([parent1, category11])
 
+    # Non-fiction
     book7 = Book.objects.create(author=author7,
                                 title='A Brief History of Time',
                                 price='51.99',
@@ -138,6 +149,7 @@ def populate_database(apps, schema_editor):
                                 url='https://images-na.ssl-images-amazon.com/images/I/51fbpKt3-JL._SX331_BO1,204,203,200_.jpg')
     book8.category.set([parent2, category17])
 
+    #  Fiction
     book9 = Book.objects.create(author=author9,
                                 title='Sandstorm',
                                 price='9.99',
@@ -190,7 +202,7 @@ def populate_database(apps, schema_editor):
                                  title='Go Tell the Bees That I Am Gone',
                                  price='29.99',
                                  first_published=2021,
-                                 description='The past may seem the safest place to be . . . but it is the most dangerous time to be alive...Jamie Fraser and Claire Randall were torn apart by the Jacobite Rising in 1746, and it took them twenty years to find each other again. Now the American Revolution threatens to do the same.',
+                                 description='The past may seem the safest place to be .. but it is the most dangerous time to be alive...Jamie Fraser and Claire Randall were torn apart by the Jacobite Rising in 1746, and it took them twenty years to find each other again. Now the American Revolution threatens to do the same.',
                                  url='https://prodimage.images-bn.com/pimages/9781101885680_p0_v2_s550x406.jpg')
     book15.category.set([parent1, category1])
 
@@ -286,7 +298,7 @@ def populate_database(apps, schema_editor):
                                  title='The Other Einstein',
                                  price='15.99',
                                  first_published=2016,
-                                 description='n the tradition of Beatriz Williams and Paula McClain, Marie Benedict\'s The Other Einstein offers us a window into a brilliant, fascinating woman whose light was lost in Einstein\'s enormous shadow. This novel resurrects Einstein\'s wife, a brilliant physicist in her own right, whose contribution to the special theory of relativity is hotly debated. Was she simply Einstein\'s sounding board, an assistant performing complex mathematical equations? Or did she contribute something more?',
+                                 description='In the tradition of Beatriz Williams and Paula McClain, Marie Benedict\'s The Other Einstein offers us a window into a brilliant, fascinating woman whose light was lost in Einstein\'s enormous shadow. This novel resurrects Einstein\'s wife, a brilliant physicist in her own right, whose contribution to the special theory of relativity is hotly debated. Was she simply Einstein\'s sounding board, an assistant performing complex mathematical equations? Or did she contribute something more?',
                                  url='https://prodimage.images-bn.com/pimages/9781492637264_p0_v4_s550x406.jpg')
     book27.category.set([parent1, category3])
 
@@ -369,6 +381,344 @@ def populate_database(apps, schema_editor):
                                  description='What if you knew someone you loved was going to die? What if you thought you could save them? How much would you risk to try? Claire Randall has gone to find Jamie Fraser, the man she loved more than life, and has left half her heart behind with their daughter, Brianna. Claire gave up Jamie to save Brianna, and now Bree has sent her mother back to the mysterious Scottish warrior who was willing to give his life to save them both. ',
                                  url='https://prodimage.images-bn.com/pimages/9780440335177_p0_v4_s550x406.jpg')
     book37.category.set([parent1, category5])
+
+    book38 = Book.objects.create(author=author29,
+                                 title='The Only Good Indians',
+                                 price='19.99',
+                                 first_published=2021,
+                                 description='At the crossroads of horror, poetry and history sits The Only Good Indians. These three paths might seem inconceivable considering the first road mentioned. No talk here of what will keep you up at night. “Poetic” should be called out in Jones’ writing. He gives distinct voice to his four main characters. ',
+                                 url='https://prodimage.images-bn.com/pimages/9781982136468_p0_v3_s550x406.jpg')
+    book38.category.set([parent1,category6, category11])
+
+    book39 = Book.objects.create(author=author29,
+                                 title='The Last Final Girl',
+                                 price='14.99',
+                                 first_published=2012,
+                                 description='The Last Final Girl is like Quentin Tarantino\'s take on The Cabin in the Woods. Bloody, absurd, and smart. Plus, there\'s a killer in a Michael Jackson mask." - Carlton Mellick III, author of ApeshitLife in a slasher film is easy. You just have to know when to die.',
+                                 url='https://prodimage.images-bn.com/pimages/9781621050513_p0_v2_s550x406.jpg')
+    book39.category.set([parent1, category6, category11])
+
+
+    book40 = Book.objects.create(author=author30,
+                                 title='Hard Cash Valley',
+                                 price='20.99',
+                                 first_published=2021,
+                                 description='Dane Kirby is a broken man and no stranger to tragedy. As a life-long resident and ex-arson investigator for McFalls County, Dane has lived his life in one of the most chaotic and crime-ridden regions of the south. When he gets called in to consult on a brutal murder in a Jacksonville, Florida, motel room, he and his FBI counterpart, Special Agent Roselita Velasquez, begin an investigation that leads them back to the criminal circles of his own backyard.',
+                                 url='https://prodimage.images-bn.com/pimages/9781250779632_p0_v6_s550x406.jpg')
+    book40.category.set([parent1, category7, category11])
+
+    book41 = Book.objects.create(author=author31,
+                                 title='Gold Mine Massacre',
+                                 price='12.99',
+                                 first_published=2021,
+                                 description='For Smoke and his daughter Denny, life on the Sugarloaf Ranch is more valuable than all the gold in the world. Which works out fine, since all the gold mines in Big Rock were squeezed dry years ago. Even so, that won’t stop a pair of businessmen from the East from trying to squeeze out a little more.',
+                                 url='https://prodimage.images-bn.com/pimages/9780786047307_p0_v1_s550x406.jpg')
+
+    book41.category.set([parent1, category8])
+
+    book42 = Book.objects.create(author=author31,
+                                 title='Red River Vengeance',
+                                 price='15.99',
+                                 first_published=2021,
+                                 description='A good man like Perley Gates knows that when you race with the devil, you\'d better cross the finish line first—or you won\'t finish at all...',
+                                 url='https://prodimage.images-bn.com/pimages/9780786047390_p0_v1_s550x406.jpg')
+    book42.category.set([parent1, category8])
+
+    book43 = Book.objects.create(author=author31,
+                                 title='By the Neck',
+                                 price='14.99',
+                                 first_published=2021,
+                                 description='Rollie Finnegan is a man of few words. As a former Pinkerton agent with two decades of experience under his belt, he uses his stony silence to break down suspects and squeeze out confessions. Hence the nickname Stoneface. Over the years, he’s locked up plenty of killers. Now he’s ready to make a killing—for himself.',
+                                 url='https://prodimage.images-bn.com/pimages/9780786046058_p0_v2_s550x406.jpg')
+    book43.category.set([parent1, category8])
+
+    book44 = Book.objects.create(author=author32,
+                                 title='Outlawed',
+                                 price='25.99',
+                                 first_published=2021,
+                                 description='The Crucible meets True Grit in this riveting adventure story of a fugitive girl, a mysterious gang of robbers, and their dangerous mission to transform the Wild West.',
+                                 url='https://prodimage.images-bn.com/pimages/9781635575422_p0_v6_s550x406.jpg')
+    book44.category.set([parent1, category8, category11])
+
+    book45 = Book.objects.create(author=author32,
+                                 title='The Life and Death of Sophie Stark',
+                                 price='15.99',
+                                 first_published=2016,
+                                 description='Who is Sophie Stark? A brilliant filmmaker, a lover, a wife, a friend, a traitor. A troubled misfit who becomes a star, at great cost to the people who love her and, ultimately, to herself. Gripping and provocative, The Life and Death of Sophie Stark is a story of the power of art to transform lives and to destroy them, and of an artist’s drive to create something greater than herself, even if it means sacrificing everything—and everyone—she loves.',
+                                 url='https://prodimage.images-bn.com/pimages/9780399184475_p0_v2_s550x406.jpg')
+    book45.category.set([parent1, category8])
+
+    book46 = Book.objects.create(author=author32,
+                                 title='America Pacifica',
+                                 price='19.99',
+                                 first_published=2012,
+                                 description='Eighteen-year-old Darcy lives on the island of America Pacifica--one of the last places on earth that is still habitable, after North America has succumbed to a second ice age. Education, food, and basic means of survival are the province of a chosen few, while the majority of the island residents must struggle to stay alive. ',
+                                 url='https://prodimage.images-bn.com/pimages/9780316105071_p0_v3_s550x406.jpg')
+    book46.category.set([parent1, category8])
+
+    book47 = Book.objects.create(author=author33,
+                                 title='The Forgotten 500',
+                                 price='29.99',
+                                 first_published=2008,
+                                 description='During a bombing campaign over Romanian oil fields, hundreds of American airmen were shot down in Nazi-occupied Yugoslavia. Local Serbian farmers and peasants risked their own lives to give refuge to the soldiers while they waited for rescue, and in 1944, Operation Halyard was born. The risks were incredible. The starving Americans in Yugoslavia had to construct a landing strip large enough for C-47 cargo planes—without tools, without alerting the Germans, and without endangering the villagers. And the cargo planes had to make it through enemy airspace and back—without getting shot down themselves.',
+                                 url='https://images-na.ssl-images-amazon.com/images/I/51DWVP8UvBL._SX330_BO1,204,203,200_.jpg')
+    book47.category.set([parent1, category25])
+
+    book48 = Book.objects.create(author=author33,
+                                 title='The Wooden Horse',
+                                 price='20.99',
+                                 first_published=2004,
+                                 description='An epic adventure the most brilliant escape and evasion from the Nazis ever written.',
+                                 url='https://images-na.ssl-images-amazon.com/images/I/81Dy8j0pWOL.SR160,240_BG243,243,243.jpg')
+    book48.category.set([parent1, category25])
+
+    book48 = Book.objects.create(author=author34,
+                                 title='A Higher Call',
+                                 price='15.99',
+                                 first_published=2014,
+                                 description='A “beautiful story of a brotherhood between enemies” emerges from the horrors of World War II in this New York Times bestseller by the author of Spearhead. ',
+                                 url='https://images-na.ssl-images-amazon.com/images/I/51WmMXXbi4L._SX329_BO1,204,203,200_.jpg')
+    book48.category.set([parent1, category25])
+
+    book49 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 1',
+                                 price='10.99',
+                                 first_published=2003,
+                                 description='Naruto is a young shinobi with an incorrigible knack for mischief. He’s got a wild sense of humor, but Naruto is completely serious about his mission to be the world’s greatest ninja!',
+                                 url='https://prodimage.images-bn.com/pimages/9781569319000_p0_v1_s550x406.jpg')
+    book49.category.set([parent1, category26])
+
+    book50 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 2',
+                                 price='10.99',
+                                 first_published=2003,
+                                 description='Tired of menial tasks, Naruto, Sasuke and Sakura ask for a tougher assignment. But you should always be careful what you wish for! Along with their teacher, Kakashi, the trio must now guard a cranky old man from the Land of the Waves. But Tazuna the bridgebuilder is in more danger than anyone could have imagined. And now the young ninja are too!',
+                                 url='https://prodimage.images-bn.com/pimages/9781591161783_p0_v1_s550x406.jpg')
+    book50.category.set([parent1, category26])
+
+    book51 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 3',
+                                 price='15.99',
+                                 first_published=2011,
+                                 description='Naruto\'s sensei Kakashi believes that the diablolical Zabuza survived their last battle. Now, in anticipation of their enemy\'s return, Kakashi puts Naruto, Sasuke and Sakura through rigorous training programs to increase their focus and control. This time, the job of protecting the old bridge builder Tazuna and his family will be a hundred times more difficult!',
+                                 url='https://prodimage.images-bn.com/pimages/9781421544366_p0_v1_s550x406.jpg')
+    book51.category.set([parent1, category26])
+
+    book52 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 4',
+                                 price='19.99',
+                                 first_published=2011,
+                                 description='In the Land of Waves, Naruto and his teammates Sakura and Sasuke, along with their sensei Kakashi, struggle to protect the bridge builder Tazuna and his family from Gato\'s hired thugs. When one of Naruto\'s friends falls in battle, Naruto is faced with the most difficult choice of his life. How far will he go to protect his friends? And does he have what it takes to be a hero?',
+                                 url='https://prodimage.images-bn.com/pimages/9781421544410_p0_v1_s550x406.jpg')
+    book52.category.set([parent1, category26])
+
+    book53 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 5',
+                                 price='10.99',
+                                 first_published=2004,
+                                 description='Naruto is a young shinobi with an incorrigible knack for mischief. He’s got a wild sense of humor, but Naruto is completely serious about his mission to be the world’s greatest ninja!',
+                                 url='https://prodimage.images-bn.com/pimages/9781591163596_p0_v2_s550x406.jpg')
+    book53.category.set([parent1, category26])
+
+    book54 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 6',
+                                 price='15.99',
+                                 first_published=2011,
+                                 description='Naruto, Sasuke and Sakura passed the written portion of the Chûnin Exam, but that was only the beginning! Now in the thick of the exam\'s second phase, held in the aptly named Forest of Death, instructor Mitarashi Anko has promised to cut the number of advancing teams by half. And a mysterious predator in their midst is after Sasuke!',
+                                 url='https://prodimage.images-bn.com/pimages/9781421544458_p0_v1_s550x406.jpg')
+    book54.category.set([parent1, category26])
+
+    book54 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 7',
+                                 price='15.99',
+                                 first_published=2011,
+                                 description='Deep within the Forest of Death, Naruto, Sasuke and Sakura are still reeling from Orochimaru\'s attack...and now they must battle his minions, the mysterious Sound Ninja. And as Sasuke struggles with the strange force growing inside him, spreading like an infection from the curse-mark Orochimaru burned into his neck, time is running out for the student ninja to collect the scrolls they need to pass the Chûnin Exams!',
+                                 url='https://prodimage.images-bn.com/pimages/9781421544465_p0_v1_s550x406.jpg')
+    book54.category.set([parent1, category26])
+
+    book55 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 8',
+                                 price='16.99',
+                                 first_published=2011,
+                                 description='As the preliminaries to the third phase of the Journeyman Ninja Selection Exams begin, the student ninja face off against each other in no-holds-barred, one-on-one bouts. Deaf to Sakura\'s pleas to withdraw from the contest and despite the crippling effects of the curse placed on him by the nefarious Orochimaru, Sasuke enters the first match against one of the vicious Sound Ninja spies.',
+                                 url='https://prodimage.images-bn.com/pimages/9781421544472_p0_v1_s550x406.jpg')
+    book55.category.set([parent1, category26])
+
+    book56 = Book.objects.create(author=author35,
+                                 title='Naruto, Volume 9',
+                                 price='14.99',
+                                 first_published=2011,
+                                 description='The student ninja unleash their signature moves as the preliminaries to the third phase of the Chûnin Exams continue. The heated, one-on-one battles bring out the best and the worst in the young ninja fighting to move on to the finals. When Hyuga clan members Neji and Hinata are pitted against each other, will old family grudges make their duel more vicious than the rest?',
+                                 url='https://prodimage.images-bn.com/pimages/9781421544489_p0_v1_s550x406.jpg')
+    book56.category.set([parent1, category26])
+
+    book57 = Book.objects.create(author=author36,
+                                 title='Bleach, Vol. 1: Strawberry and the Soul Reapers',
+                                 price='10.99',
+                                 first_published=2004,
+                                 description='Part-time student, full-time Soul Reaper, Ichigo is one of the chosen few guardians of the afterlife.Ichigo Kurosaki never asked for the ability to see ghosts—he was born with the gift. When his family is attacked by a Hollow—a malevolent lost soul—Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace. Find out why Tite Kubo’s Bleach has become an international manga smash-hit!',
+                                 url='https://prodimage.images-bn.com/pimages/9781591164418_p0_v1_s550x406.jpg')
+    book57.category.set([parent1, category26])
+
+    book58 = Book.objects.create(author=author36,
+                                 title='Bleach, Vol. 2: Goodbye Parakeet, Good Night My Sister',
+                                 price='10.99',
+                                 first_published=2004,
+                                 description='chigo Kurosaki never asked for the ability to see ghosts—he was born with the gift. When his family is attacked by a Hollow—a malevolent lost soul—Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace. Find out why Tite Kubo’s Bleach has become an international manga smash-hit!',
+                                 url='https://prodimage.images-bn.com/pimages/9781591164425_p0_v2_s550x406.jpg')
+    book58.category.set([parent1, category26])
+
+    book59 = Book.objects.create(author=author36,
+                                 title='Bleach (3-in-1 Edition), Vol. 3: Includes Vols. 10, 11 & 12',
+                                 price='15.99',
+                                 first_published=2011,
+                                 description='Rukia Kuchiki, the ex-Soul Reaper responsible for Ichigo\'s transformation, is on the lam. Her brethren at the Soul Society are quite displeased with the fact that she transferred the powers of a Soul Reaper to a human and have dispatched two of their strongest agents to neutralize the situation. Their mission is twofold: to return Rukia to the Soul Society so that she may pay for her crime and to deal with Ichigo—permanently. But an unlikely third party is standing in their way: Uryû Ishida, the Quincy!',
+                                 url='https://prodimage.images-bn.com/pimages/9781421539942_p0_v2_s550x406.jpg')
+    book59.category.set([parent1, category26])
+
+    book60 = Book.objects.create(author=author36,
+                                 title='Bleach (3-in-1 Edition), Vol. 4: Includes Vols. 10, 11 & 12',
+                                 price='17.99',
+                                 first_published=2013,
+                                 description='Ichigo and crew are determined to rescue Rukia from the Soul Society, and with the help of explosives expert Kûkaku, they actually have a chance of making it inside the walls. But the plan hinges on Ichigo getting control of his torrential spiritual energy, and with Rukia awaiting execution, there’s no time to waste! And even if they can breach the Soul Society’s defenses, there are twelve companies of angry Soul Reapers standing between them and their friend!',
+                                 url='https://prodimage.images-bn.com/pimages/9781421554679_p0_v3_s550x406.jpg')
+    book60.category.set([parent1, category26])
+
+    book61 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 1',
+                                 price='10.99',
+                                 first_published=2012,
+                                 description='In this post-apocalytpic sci-fi story, humanity has been devastated by the bizarre, giant humanoids known as the Titans. Little is known about where they came from or why they are bent on consuming mankind. Seemingly unintelligent, they have roamed the world for years, killing everyone they see. For the past century, what\'s left of man has hidden in a giant, three-walled city. People believe their 50-meter-high walls will protect them from the Titans, but the sudden appearance of an immense Titan is about to change everything.',
+                                 url='https://prodimage.images-bn.com/pimages/9781612620244_p0_v2_s550x406.jpg')
+    book61.category.set([parent1, category9])
+
+    book62 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 2',
+                                 price='10.99',
+                                 first_published=2012,
+                                 description='The Colossal Titan has breached humanity’s first line of defense, Wall Maria. Mikasa, the 104th Training Corps’ ace and Eren’s best friend, may be the only one capable of defeating them, but beneath her calm exterior lurks a dark past. When all looks lost, a new Titan appears and begins to slaughter its fellow Titans. Could this new monster be a blessing in disguise, or is the truth something much more sinister?',
+                                 url='https://prodimage.images-bn.com/pimages/9781612620251_p0_v2_s550x406.jpg')
+    book62.category.set([parent1, category9])
+
+    book63 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 3',
+                                 price='10.99',
+                                 first_published=2012,
+                                 description='The last thing Eren remembers before blacking out, a Titan had bitten off his arm and leg and was getting ready to eat him alive. Much to his surprise he wakes up without a scratch on him, with a crowd of angry soldiers screaming for his blood. What strange new power has he awakened, and what will happen when the boy devoted to destroying the Titans becomes one himself?',
+                                 url='https://prodimage.images-bn.com/pimages/9781612620268_p0_v2_s550x406.jpg')
+    book63.category.set([parent1, category9])
+
+    book64 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 4',
+                                 price='10.99',
+                                 first_published=2013,
+                                 description='he Survey Corps develop a risky gambit – have Eren in Titan form attempt to repair Wall Rose, reclaiming human territory from the monsters for the first time in a century. But Titan-Eren’s self-control is far from perfect, and when he goes on a rampage, not even Armin can stop him! With the survival of humanity on his massive shoulders, will Eren be able to return to his senses, or will he lose himself forever?',
+                                 url='https://prodimage.images-bn.com/pimages/9781612622538_p0_v1_s550x406.jpg')
+    book64.category.set([parent1, category9])
+
+    book65 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 5',
+                                 price='10.99',
+                                 first_published=2013,
+                                 description='Thanks to Eren, humanity has taken the town of Trost back from the Titans. Exhausted, Eren falls into a coma for three days – and wakes in shackles, staring at Erwin Smith, leader of the Survey Corps. Certain that Eren’s father’s research holds the key to the mystery of the Titans’ rise, Smith wants an expedition to retrieve it from the house where Eren grew up. But that’s deep in Titan territory, and to get there Eren will need to master a power he still doesn’t fully understand…',
+                                 url='https://prodimage.images-bn.com/pimages/9781612622545_p0_v1_s550x406.jpg')
+    book65.category.set([parent1, category9])
+
+    book66 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 6',
+                                 price='10.99',
+                                 first_published=2013,
+                                 description='On the way to Eren’s home, deep in Titan territory, the Survey Corps ranks are broken by a charge led by a female Titan! But this Abnormal is different – she kills not to eat but to protect herself, and she seems to be looking for someone. Armin comes to a shocking conclusion: She’s a human in a Titan’s body, just like Eren!',
+                                 url='https://prodimage.images-bn.com/pimages/9781612622552_p0_v1_s550x406.jpg')
+    book66.category.set([parent1, category9])
+
+    book67 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 7',
+                                 price='10.99',
+                                 first_published=2013,
+                                 description='The Survey Corps sets a cunning trap to capture the mysterious Abnormal Titan that broke through their ranks. As Armin tries to determine the grotesque creature’s identity and purpose, scouts report Titans closing in on all sides! But they don’t seem to be after the humans – instead they’re targeting the Titan!',
+                                 url='https://prodimage.images-bn.com/pimages/9781612622569_p0_v1_s550x406.jpg')
+    book67.category.set([parent1, category9])
+
+    book68 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 8',
+                                 price='10.99',
+                                 first_published=2013,
+                                 description='The expedition outside the wall was Eren\'s chance to prove himself. But it failed, and the female Titan is free once more! With his squad dead, Eren faces a royal summons. Will Mikasa and Armin have to betray their king to save their friend? And can they discover the female Titan\'s identity before she kills again?',
+                                 url='https://prodimage.images-bn.com/pimages/9781612625478_p0_v1_s550x406.jpg')
+    book68.category.set([parent1, category9])
+
+    book69 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 9',
+                                 price='10.99',
+                                 first_published=2013,
+                                 description='Eren is still resting from his brutal fight with the female Titan, when word reaches the interior that the impossible has happened: Wall Rose itself has been breached, and Titans are pouring through the gap! The emergency casts new urgency over Armin and Hange\'s questions about how the walls were built, and what humanity can do to restore them...',
+                                 url='https://prodimage.images-bn.com/pimages/9781612625485_p0_v1_s550x406.jpg')
+    book69.category.set([parent1, category9])
+
+    book70 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 10',
+                                 price='10.99',
+                                 first_published=10.99,
+                                 description='With no combat gear and Wall Rose breached, the 104th scrambles to evacuate the villages in the Titans\' path. On their way to the safety of Wall Sheena, they decide to spend the night in Utgard Castle. But their sanctuary becomes a slaughterhouse when they discover that, for some reason, these Titans attack at night!',
+                                 url='https://prodimage.images-bn.com/pimages/9781612626765_p0_v1_s550x406.jpg')
+    book70.category.set([parent1, category9])
+
+    book71 = Book.objects.create(author=author37,
+                                 title='Attack on Titan, Volume 11',
+                                 price='10.99',
+                                 first_published=2014,
+                                 description='Thanks to Eren\'s timely arrival, the 104th has managed to turn the tide at Wall Rose. But this momentary victory forces two more traitors into a corner – and the identity of the Titans who have been destroying the walls is revealed! What can Eren do against the two most dangerous monsters humanity has ever faced? And who else might be an enemy in disguise?',
+                                 url='https://prodimage.images-bn.com/pimages/9781612626772_p0_v1_s550x406.jpg')
+    book71.category.set([parent1, category9])
+
+    book72 = Book.objects.create(author= author38,
+                                 title='Verity',
+                                 price='15.99',
+                                 first_published=2018,
+                                 description='owen Ashleigh is a struggling writer on the brink of financial ruin. When Jeremy Crawford, husband of bestselling author Verity Crawford, asks Lowen to complete the remaining books in a contract his permanently injured wife is unable to fulfill, Lowen has no choice but to accept. Lowen arrives at the Crawford home with the intention of only staying one or two nights-long enough to sort through Verity\'s chaotic home office to collect all the notes and outlines she\'ll need to start writing the first novel.',
+                                 url='https://prodimage.images-bn.com/pimages/9781791392796_p0_v6_s550x406.jpg')
+    book72.category.set([parent1, category10])
+
+    book73 = Book.objects.create(author=author38,
+                                 title='Maybe Someday',
+                                 price='15.99',
+                                 first_published=2014,
+                                 description='At twenty-two years old, Sydney is enjoying a great life: She’s in college, working a steady job, in love with her wonderful boyfriend, Hunter, and rooming with her best friend, Tori. But everything changes when she discovers that Hunter is cheating on her—and she’s forced to decide what her next move should be.',
+                                 url='https://prodimage.images-bn.com/pimages/9781476753164_p0_v4_s550x406.jpg')
+    book73.category.set([parent1, category10])
+
+    book74 = Book.objects.create(author=author38,
+                                 title='Regretting You',
+                                 price='17.99',
+                                 first_published=2019,
+                                 description='Morgan Grant and her sixteen-year-old daughter, Clara, would like nothing more than to be nothing alike.Morgan is determined to prevent her daughter from making the same mistakes she did. By getting pregnant and married way too young, Morgan put her own dreams on hold. Clara doesn’t want to follow in her mother\’s footsteps. Her predictable mother doesn’t have a spontaneous bone in her body.',
+                                 url='https://prodimage.images-bn.com/pimages/9781542016421_p0_v2_s550x406.jpg')
+    book74.category.set([parent1, category10])
+
+    book75 = Book.objects.create(author=author39,
+                                 title='Shadow Storm',
+                                 price='10.99',
+                                 first_published=2021,
+                                 description='As the youngest member of the Ferraro family, Emmanuelle has watched each of her brothers find happiness in love while her own heart was shattered by a lover’s betrayal. For two years she’s stayed as far away from Valentino Saldi as possible—until she learns that he’s been shot during a hostile takeover of his family’s territory.',
+                                 url='https://prodimage.images-bn.com/pimages/9780593333136_p0_v2_s550x406.jpg')
+    book75.category.set([parent1, category10])
+
+    book76 = Book.objects.create(author=author39,
+                                 title='Reckless Road',
+                                 price='10.99',
+                                 first_published=2021,
+                                 description='While Gedeon “Player” Lazaroff is one of Torpedo Ink motorcycle club’s roughest members, he’s also one of the calmest. Little rattles Player, except for the times his gift gets the better of him. When that happens, he has to just lie down in the dark and hope for the best. But on a night when he’s on the verge of losing it, he meets a woman who manages to soothe his fractured mind.',
+                                 url='https://prodimage.images-bn.com/pimages/9780593099865_p0_v2_s550x406.jpg')
+    book76.category.set([parent1, category10])
+
+    book77 = Book.objects.create(author=author34,
+                                 title='Voices of the Pacific',
+                                 price='30.99',
+                                 first_published=2021,
+                                 description='Following fifteen Marines from Pearl Harbor, through their battles with the Japanese, to their return home after V-J Day, Adam Makos and Marcus Brotherton have compiled an oral history of the Pacific War in the words of the men who fought on the front lines. With vivid, unforgettable detail, these Marines reveal harrowing accounts of combat with an implacable enemy, the camaraderie they found, the friends they lost, and the aftermath of the war\'s impact on their lives.',
+                                 url='https://prodimage.images-bn.com/pimages/9780593185315_p0_v2_s550x406.jpg')
+    book77.category.set([parent1, category25])
 
 
 class Migration(migrations.Migration):
