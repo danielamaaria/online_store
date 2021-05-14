@@ -18,8 +18,8 @@ def populate_database(apps, schema_editor):
     category5 = Category.objects.create(name='Fantasy', is_child=True, parent_category=parent1)
     category6 = Category.objects.create(name='Horror', is_child=True, parent_category=parent1)
     category7 = Category.objects.create(name='Thriller', is_child=True, parent_category=parent1)
-    category8 = Category.objects.create(name='Satire', is_child=True, parent_category=parent1)
-    category9 = Category.objects.create(name='Young adult', is_child=True, parent_category=parent1)
+    category8 = Category.objects.create(name='Westerns', is_child=True, parent_category=parent1)
+    category9 = Category.objects.create(name='Graphic Novels & Comics', is_child=True, parent_category=parent1)
     category10 = Category.objects.create(name='Romance', is_child=True, parent_category=parent1)
     category11 = Category.objects.create(name='Mystery & Crime', is_child=True, parent_category=parent1)
     category25 = Category.objects.create(name='War', is_child=True, parent_category=parent1)
@@ -66,6 +66,11 @@ def populate_database(apps, schema_editor):
     author23 = Author.objects.create(name='Serena', surname='Burdick')
     author24 = Author.objects.create(name='Sharon', surname='Kay Penman')
     author25 = Author.objects.create(name='Courtney', surname='Peppernell')
+    author26 = Author.objects.create(name='Morgan', surname='Harper Nichols')
+    author27 = Author.objects.create(name='Mary', surname='Oliver')
+    author28 = Author.objects.create(name='Timothy', surname='Zahn')
+    author29 = Author.objects.create(name='', surname='')
+    author30 = Author.objects.create(name='', surname='')
 
 
     # Books
@@ -316,6 +321,55 @@ def populate_database(apps, schema_editor):
                                  description='Pillow Thoughts is a collection of poetry and prose about heartbreak, love, and raw emotions. It is divided into sections to read when you feel you need them most.Make a cup of tea and let yourself feel.',
                                  url='https://prodimage.images-bn.com/pimages/9781449498047_p0_v2_s550x406.jpg')
     book31.category.set([parent1, category4])
+
+    book32 = Book.objects.create(author=author26,
+                                 title='All Along You Were Blooming: Thoughts for Boundless Living',
+                                 price='20.99',
+                                 first_published=2020,
+                                 description='A celebration of hope. An encounter with grace. A restoration of the heart. A healing of wounds. An anthem of freedom. All Along You Were Blooming is the ultimate love letter from the pen of popular Instagram poet Morgan Harper Nichols to your mind, heart, soul, and body.',
+                                 url='https://prodimage.images-bn.com/pimages/9780310454076_p0_v3_s550x406.jpg')
+    book32.category.set([parent1, category4])
+
+    book33 = Book.objects.create(author=author26,
+                                 title='How Far You Have Come: Musings on Beauty and Courage',
+                                 price='15.99',
+                                 first_published=2021,
+                                 description='How Far You Have Come is an exquisitely illustrated collection of poetry and essays from bestselling artist and writer Morgan Harper Nichols. In the midst of the hurt and the mundane, the questions and the not yets, we can forget just how far we have come. Morgan weaves together personal reflections with her signature poems to share her journey to reclaim moments of brokenness, division, and pain and re-envision them as experiences of reconciliation, unity, and hope.',
+                                 url='https://prodimage.images-bn.com/pimages/9780310456599_p0_v3_s550x406.jpg')
+    book33.category.set([parent1, category4])
+
+    book34 = Book.objects.create(author=author27,
+                                 title='Dog Songs',
+                                 price='14.99',
+                                 first_published=2015,
+                                 description='Mary Oliver’s Dog Songs is a celebration of the special bond between human and dog, as understood through the poet’s relationships to the canines that have accompanied her daily walks, warmed her home, and inspired her work. Oliver’s poems begin in the small everyday moments familiar to all dog lovers, but through her extraordinary vision, these observations become higher meditations on the world and our place in it.',
+                                 url='https://prodimage.images-bn.com/pimages/9780143125839_p0_v1_s550x406.jpg')
+    book34.category.set([parent1, category4])
+
+    book35 = Book.objects.create(author=author28,
+                                 title='Star Wars:Thrawn Ascendancy',
+                                 price='29.99',
+                                 first_published=2021,
+                                 description='Thrawn’s latest triumph still rests newly on his shoulders. He has led the Chiss to victory and brought glory to the House of Mitth, but the true threat to the Ascendancy has not yet been extinguished. Their foes do not send threats or ultimatums, do not mass ships on the edge of the Chaos. Their weapons come cloaked in smiles and generosity: Gifts offered freely. Services granted unconditionally.',
+                                 url='https://prodimage.images-bn.com/pimages/9780593358153_p0_v2_s550x406.jpg')
+    book35.category.set([parent1, category5])
+
+    book36 = Book.objects.create(author=author28,
+                                 title='Thrawn (Star Wars)',
+                                 price='19.99',
+                                 first_published=2018,
+                                 description='One of the most cunning and ruthless warriors in the history of the Galactic Empire, Grand Admiral Thrawn is also one of the most captivating characters in the Star Wars universe, from his introduction in bestselling author Timothy Zahn’s classic Heir to the Empire through his continuing adventures in Dark Force Rising, The Last Command, and beyond. But Thrawn’s origins and the story of his rise in the Imperial ranks have remained mysterious.',
+                                 url='https://prodimage.images-bn.com/pimages/9781101967027_p0_v2_s550x406.jpg')
+    book36.category.set([parent1, category5])
+
+    book37 = Book.objects.create(author=author13,
+                                 title='Drums of Autumn',
+                                 price='15.99',
+                                 first_published=2004,
+                                 description='What if you knew someone you loved was going to die? What if you thought you could save them? How much would you risk to try? Claire Randall has gone to find Jamie Fraser, the man she loved more than life, and has left half her heart behind with their daughter, Brianna. Claire gave up Jamie to save Brianna, and now Bree has sent her mother back to the mysterious Scottish warrior who was willing to give his life to save them both. ',
+                                 url='https://prodimage.images-bn.com/pimages/9780440335177_p0_v4_s550x406.jpg')
+    book37.category.set([parent1, category5])
+
 
 class Migration(migrations.Migration):
     dependencies = [
