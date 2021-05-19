@@ -26,19 +26,19 @@ def populate_database(apps, schema_editor):
     category26 = Category.objects.create(name='Manga', is_child=True, parent_category=parent1)
 
     parent2 = Category.objects.create(name='Nonfiction', is_child=False, parent_category=None)
-    category12 = Category.objects.create(name='Art/architecture', is_child=True, parent_category=parent2)
+    category12 = Category.objects.create(name='Art/architecture & Photography', is_child=True, parent_category=parent2)
     category13 = Category.objects.create(name='Biography', is_child=True, parent_category=parent2)
     category14 = Category.objects.create(name='Cookbook', is_child=True, parent_category=parent2)
-    category15 = Category.objects.create(name='Dictionary', is_child=True, parent_category=parent2)
-    category16 = Category.objects.create(name='Encyclopedia', is_child=True, parent_category=parent2)
-    category17 = Category.objects.create(name='Guide', is_child=True, parent_category=parent2)
+    category15 = Category.objects.create(name='Home & Garden', is_child=True, parent_category=parent2)
+    category16 = Category.objects.create(name='Education', is_child=True, parent_category=parent2)
+    category17 = Category.objects.create(name='Business', is_child=True, parent_category=parent2)
     category18 = Category.objects.create(name='Health/fitness', is_child=True, parent_category=parent2)
-    category19 = Category.objects.create(name='History', is_child=True, parent_category=parent2)
+    category19 = Category.objects.create(name='Engineering', is_child=True, parent_category=parent2)
     category20 = Category.objects.create(name='Humor', is_child=True, parent_category=parent2)
-    category21 = Category.objects.create(name='Journal', is_child=True, parent_category=parent2)
-    category22 = Category.objects.create(name='Math', is_child=True, parent_category=parent2)
+    category21 = Category.objects.create(name='Nature', is_child=True, parent_category=parent2)
+    category22 = Category.objects.create(name='Travel', is_child=True, parent_category=parent2)
     category23 = Category.objects.create(name='Philosophy', is_child=True, parent_category=parent2)
-    category24 = Category.objects.create(name='Science', is_child=True, parent_category=parent2)
+    category24 = Category.objects.create(name='Science & Technology', is_child=True, parent_category=parent2)
 
     # Authors
     author1 = Author.objects.create(name='George R.R.', surname='Martin')
@@ -80,6 +80,21 @@ def populate_database(apps, schema_editor):
     author37 = Author.objects.create(name='Hajime ', surname='Isayama')
     author38 = Author.objects.create(name='Colleen', surname='Hoover')
     author39 = Author.objects.create(name='Christine', surname='Feehan')
+    author40 = Author.objects.create(name='Robert', surname='Macfarlane')
+    author41 = Author.objects.create(name='Erik', surname='Larson')
+    author42 = Author.objects.create(name='Billie', surname='Ellish')
+    author43 = Author.objects.create(name='Ta-Nehisi ', surname='Coates')
+    author44 = Author.objects.create(name='Barack', surname='Obama')
+    author45 = Author.objects.create(name='Rob', surname='Kenner')
+    author46 = Author.objects.create(name='Bill', surname='Cowher')
+    author47 = Author.objects.create(name='Harley', surname='Pasternak')
+    author48 = Author.objects.create(name='Heidi', surname='Swanson')
+    author49 = Author.objects.create(name='Nigella', surname='Lawson')
+    author50 = Author.objects.create(name='Molly', surname='Baz')
+    author51 = Author.objects.create(name='Taku', surname='Furuya')
+    author52 = Author.objects.create(name='Clea', surname='Shearer')
+    author53 = Author.objects.create(name='Erin', surname='Benzakein')
+    author54 = Author.objects.create(name='Josh', surname='Hawley')
 
 
     # Books
@@ -116,12 +131,12 @@ def populate_database(apps, schema_editor):
                                 url='https://images-na.ssl-images-amazon.com/images/I/41KuPr7kpZL._SX277_BO1,204,203,200_.jpg')
     book4.category.set([parent1, category11, category7])
     # Non-fiction
-    book5 = Book.objects.create(author=author5,
-                                title='You Can Heal Your Life',
-                                price='21.99',
-                                first_published=1984,
-                                description='Louise L. Hay, bestselling author, is an internationally known leader in the self-help field. Her key message is: "If we are willing to do the mental work, almost anything can be healed." The author has a great deal of experience and firsthand information to share about healing, including how she cured herself after being diagnosed with cancer.',
-                                url='https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/You_Can_Heal_Your_Life.jpg/220px-You_Can_Heal_Your_Life.jpg')
+    book5 = Book.objects.create(author=author54,
+                                title='The Tyranny of Big Tech',
+                                price='26.99',
+                                first_published=2021,
+                                description='Big Tech and its allies do not deal gently with those who cross them, and Senator Hawley proudly bears his own battle scars. But hubris is dangerous. The time is ripe to overcome the tyranny of Big Tech by reshaping the business and legal landscape of the digital world.',
+                                url='https://prodimage.images-bn.com/pimages/9781684512393_p0_v4_s550x406.jpg')
     book5.category.set([parent2, category19])
     # Fiction
     book6 = Book.objects.create(author=author6,
@@ -720,6 +735,291 @@ def populate_database(apps, schema_editor):
                                  url='https://prodimage.images-bn.com/pimages/9780593185315_p0_v2_s550x406.jpg')
     book77.category.set([parent1, category25])
 
+    #Non Fiction books
+    #Art/arhitecture&Photography category
+    book78 = Book.objects.create(author=author40,
+                                 title='The Lost Spells',
+                                 price='25.99',
+                                 first_published=2020,
+                                 description='The Lost Spells evokes the wonder of everyday nature, conjuring up red foxes, birch trees, jackdaws, and more in poems and illustrations that flow between the pages and into readers’ minds. Robert Macfarlane’s spell-poems and Jackie Morris’s watercolour illustrations are musical and magical: these are summoning spells, words of recollection, charms of protection. To read The Lost Spells is to see anew the natural world within our grasp and to be reminded of what happens when we allow it to slip away.',
+                                 url='https://prodimage.images-bn.com/pimages/9781487007799_p0_v20_s550x406.jpg')
+    book78.category.set([parent2, category12])
+
+    book79 = Book.objects.create(author=author40,
+                                 title='The Lost Words',
+                                 price='31.99',
+                                 first_published=2018,
+                                 description='Ten years later, Robert Macfarlane and Jackie Morris set out to make a “spell book” that will conjure back twenty of these lost words, and the beings they name, from acorn to wren. By the magic of word and paint, they sought to summon these words again into the voices, stories, and dreams of children and adults alike, and to celebrate the wonder and importance of everyday nature. ',
+                                 url='https://prodimage.images-bn.com/pimages/9781487005382_p0_v1_s550x406.jpg')
+    book79.category.set([parent2, category12])
+
+    book80 = Book.objects.create(author=author41,
+                                 title='The Devil in the White City: Murder, Magic, and Madness at the Fair That Changed America',
+                                 price='21.99',
+                                 first_published=2004,
+                                 description='The Devil in the White City draws the reader into a time of magic and majesty, made all the more appealing by a supporting cast of real-life characters, including Buffalo Bill, Theodore Dreiser, Susan B. Anthony, Thomas Edison, Archduke Francis Ferdinand, and others. Erik Larson’s gifts as a storyteller are magnificently displayed in this rich narrative of the master builder, the killer, and the great fair that obsessed them both.',
+                                 url='https://prodimage.images-bn.com/pimages/9780375725609_p0_v3_s550x406.jpg')
+    book80.category.set([parent2, category12])
+
+    book81 = Book.objects.create(author=author41,
+                                 title='In the Garden of Beasts: Love, Terror, and an American Family in Hitler\'s Berlin',
+                                 price='17.99',
+                                 first_published=2012,
+                                 description='The time is 1933, the place, Berlin, when William E. Dodd becomes America’s first ambassador to Hitler’s Nazi Germany in a year that proved to be a turning point in history. A mild-mannered professor from Chicago, Dodd brings along his wife, son, and flamboyant daughter, Martha. At first Martha is entranced by the parties and pomp, and the handsome young men of the Third Reich with their infectious enthusiasm for restoring Germany to a position of world prominence. ',
+                                 url='https://prodimage.images-bn.com/pimages/9780307408853_p0_v2_s550x406.jpg')
+    book81.category.set([parent2, category12])
+
+    book82 = Book.objects.create(author=author42,
+                                 title='Billie Eilish',
+                                 price='27.99',
+                                 first_published=2021,
+                                 description='Billie Eilish is a phenomenon. With distinctive visual flare and darkly poignant lyrics that are unparalleled among music icons of the 21st century, Billie is a musician who stands out from the crowd. Between her record-shattering award-winning music and her uncompromising and unapologetic attitude, it\'s no surprise that her fanbase continues to grow by millions month after month. She is that rare combination of wildly popular and highly respected for her prodigious talent, a once in a generation superstar.',
+                                 url='https://prodimage.images-bn.com/pimages/9781538720479_p0_v8_s550x406.jpg')
+    book82.category.set([parent2, category12])
+
+    #Biography category
+    book82 = Book.objects.create(author=author43,
+                                 title='Between the World and Me',
+                                 price='20.99',
+                                 first_published=2015,
+                                 description='Between the World and Me is Ta-Nehisi Coates’s attempt to answer these questions in a letter to his adolescent son. Coates shares with his son—and readers—the story of his awakening to the truth about his place in the world through a series of revelatory experiences, from Howard University to Civil War battlefields, from the South Side of Chicago to Paris, from his childhood home to the living rooms of mothers whose children’s lives were taken as American plunder.',
+                                 url='https://prodimage.images-bn.com/pimages/9780812993547_p0_v5_s550x406.jpg')
+    book82.category.set([parent2, category13])
+
+    book83 = Book.objects.create(author=author44,
+                                 title='A Promised Land',
+                                 price='39.99',
+                                 first_published=2020,
+                                 description='Obama takes readers on a compelling journey from his earliest political aspirations to the pivotal Iowa caucus victory that demonstrated the power of grassroots activism to the watershed night of November 4, 2008, when he was elected 44th president of the United States, becoming the first African American to hold the nation’s highest office.',
+                                 url='https://prodimage.images-bn.com/pimages/9781524763169_p0_v2_s550x406.jpg')
+    book83.category.set([parent2, category13])
+
+    book84 = Book.objects.create(author=author44,
+                                 title='Dreams from My Father: A Story of Race and Inheritance',
+                                 price='19.99',
+                                 first_published=2004,
+                                 description='In this lyrical, unsentimental, and compelling memoir, the son of a black African father and a white American mother searches for a workable meaning to his life as a black American. It begins in New York, where Barack Obama learns that his father—a figure he knows more as a myth than as a man—has been killed in a car accident. This sudden death inspires an emotional odyssey—first to a small town in Kansas, from which he retraces the migration of his mother’s family to Hawaii, and then to Kenya, where he meets the African side of his family, confronts the bitter truth of his father’s life, and at last reconciles his divided inheritance.',
+                                 url='https://prodimage.images-bn.com/pimages/9781400082773_p0_v3_s550x406.jpg')
+    book84.category.set([parent2, category13])
+
+    book85 = Book.objects.create(author=author45,
+                                 title='The Marathon Don\'t Stop: The Life and Times of Nipsey Hussle',
+                                 price='25.99',
+                                 first_published=2021,
+                                 description='In the ten years since he first met Nipsey Hussle in the offices of Vibe, journalist Rob Kenner followed Hussle’s career, paying close attention to the music and business movement he was building in Los Angeles. Ten years later, they spoke again. To Kenner, it became clear that Hussle had been underestimated his entire life—not just for his artistry but also for his intellect and intentions.',
+                                 url='https://prodimage.images-bn.com/pimages/9781982140298_p0_v3_s550x406.jpg')
+    book85.category.set([parent2, category13])
+
+    book86 = Book.objects.create(author=author46,
+                                 title='Heart and Steel',
+                                 price='30.99',
+                                 first_published=2021,
+                                 description='In HEART AND STEEL, Cowher will take readers on his journey from childhood to the undersized, mohawked, disco-dancing North Carolina State linebacker, to fighting for a spot as a "bubble player" with the Browns and Eagles, before injuries ended his playing career. ',
+                                 url='https://prodimage.images-bn.com/pimages/9781982186005_p0_v1_s550x406.jpg')
+    book86.category.set([parent2, category13])
+
+    #Cookbook category
+    book87 = Book.objects.create(author=author47,
+                                 title='The Body Reset Diet: Power Your Metabolism, Blast Fat, and Shed Pounds in Just 15 Days',
+                                 price='17.99',
+                                 first_published=2014,
+                                 description='In The Body Reset Diet, celebrity trainer and New York Times bestselling author Harley Pasternak offers you the ultimate plan for a thinner, healthier, happier life. This three-phase program focuses on the easiest, most effective way to slim down: blending. The 5-day jump-start includes delicious, expertly crafted smoothies (White Peach Ginger, Apple Pie, and Pina Colada, to name a few), dips, snacks, and soups that keep you satisfied while boosting your metabolism.',
+                                 url='https://prodimage.images-bn.com/pimages/9781623362522_p0_v4_s550x406.jpg')
+    book87.category.set([parent2, category14])
+
+    book88 = Book.objects.create(author=author47,
+                                 title='The Body Reset Diet Cookbook: 150 Recipes to Power Your Metabolism, Blast Fat, and Shed Pounds in Just 15 Days',
+                                 price='20.99',
+                                 first_published=2020,
+                                 description='The Body Reset Diet Cookbook will keep your metabolism humming, so you’ll continue to blast through calories, shed pounds, and achieve your weight-loss goals.',
+                                 url='https://prodimage.images-bn.com/pimages/9780593232538_p0_v1_s550x406.jpg')
+    book88.category.set([parent2, category14])
+
+    book89 = Book.objects.create(author=author48,
+                                 title='Super Natural Simple: Whole-Food, Vegetarian Recipes for Real Life ',
+                                 price='25.99',
+                                 first_published=2021,
+                                 description='When life gets busy, it often seems easier to order in or grab something on the go than to cook at home. But this is precisely when wholesome, nutrient-packed meals are needed the most. In Super Natural Simple, beloved blogger and New York Times bestselling author Heidi Swanson offers 120 smartly streamlined recipes—with minimal ingredients, timesaving tips, and creative flavor combinations—to make healthy home cooking completely doable.',
+                                 url='https://prodimage.images-bn.com/pimages/9781984856883_p0_v2_s550x406.jpg')
+    book89.category.set([parent2, category14])
+
+    book90 = Book.objects.create(author=author48,
+                                 title='Super Natural Every Day: Well-Loved Recipes from My Natural Foods Kitchen',
+                                 price='26.99',
+                                 first_published=2011,
+                                 description='In Super Natural Every Day, Heidi helps us make nutritionally packed meals part of our daily repertoire by sharing a sumptuous collection of nearly 100 of her go-to recipes. These are the dishes that Heidi returns to again and again because they’re approachable, good for the body, and just plain delicious. This stylish cookbook is equal parts inspiration and instruction, showing us how to create a welcoming table filled with nourishing food for friends and family. ',
+                                 url='https://prodimage.images-bn.com/pimages/9781580082778_p0_v1_s550x406.jpg')
+    book90.category.set([parent2, category14])
+
+    book91 = Book.objects.create(author=author49,
+                                 title='Cook, Eat, Repeat: Ingredients, Recipes, and Stories',
+                                 price='30.99',
+                                 first_published=2021,
+                                 description='Cook, Eat, Repeat is a delicious and delightful combination of recipes intertwined with narrative essays about food, all written in Nigella Lawson’s engaging and insightful prose. Whether asking “what is a recipe?” or declaring death to the “guilty pleasure,” Nigella brings her wisdom about food and life to the fore while sharing new recipes that readers will want to return to again and again.',
+                                 url='https://prodimage.images-bn.com/pimages/9780063079540_p0_v5_s550x406.jpg')
+    book91.category.set([parent2, category14])
+
+    book92 = Book.objects.create(author=author50,
+                                 title='Cook This Book: Techniques That Teach and Recipes to Repeat',
+                                 price='18.99',
+                                 first_published=2021,
+                                 description='Molly breaks the essentials of cooking down to clear and uncomplicated recipes that deliver big flavor with little effort and a side of education, including dishes like Pastrami Roast Chicken with Schmaltzy Onions and Dill, Chorizo and Chickpea Carbonara, and of course, her signature Cae Sal. But this is not your average cookbook.',
+                                 url='https://prodimage.images-bn.com/pimages/9780593138281_p0_v1_s550x406.jpg')
+    book92.category.set([parent2, category14])
+
+    #Home & Garden
+    book93 = Book.objects.create(author=author51,
+                                 title='A Beginner\'s Guide to Succulent Gardening: A Step-by-Step Guide to Growing Beautiful & Long-Lasting Succulents',
+                                 price='15.99',
+                                 first_published=2019,
+                                 description='This book contains all sorts of helpful tips on what to look for when buying a plant, how to troubleshoot when your succulent shows signs of distress, how to trim the leaves and stems, and how to start new plants from cuttings. Clear diagrams and at-a-glance fact sheets for each variety, as well as inspirational photos of attractively and happily-housed succulents, fill the pages of this book. ',
+                                 url='https://prodimage.images-bn.com/pimages/9780804851190_p0_v2_s550x406.jpg')
+    book93.category.set([parent2, category15])
+
+    book94 = Book.objects.create(author=author52,
+                                 title='The Home Edit Life',
+                                 price='28.99',
+                                 first_published=2020,
+                                 description='thors Clea Shearer and Joanna Teplin excel at organization, but they also enjoy doing it with style. Whether it\'s adding labels to containers or sensibly (and artfully) arranging items in the fridge, anyone can feel great because, in the end, organization is the path to getting rid of stuff. Now, in their new book, they will challenge you to apply the same principles to other aspects of your life so you can take control without the stress. It\'s a book that works well as a gift and certainly when the new year comes around—a perfect book to start the year right.',
+                                 url='https://prodimage.images-bn.com/pimages/9780593138304_p0_v2_s550x406.jpg')
+    book94.category.set([parent2, category15])
+
+    book95 = Book.objects.create(author=author52,
+                                 title='The Home Edit: A Guide to Organizing and Realizing Your House Goals',
+                                 price='25.99',
+                                 first_published=2019,
+                                 description='Believe this: every single space in your house has the potential to function efficiently and look great. The mishmash of summer and winter clothes in the closet? Yep. Even the dreaded junk drawer? Consider it done. And the best news: it’s not hard to do—in fact, it’s a lot of fun. ',
+                                 url='https://prodimage.images-bn.com/pimages/9780525572640_p0_v3_s550x406.jpg')
+    book95.category.set([parent2, category15])
+
+    book96 = Book.objects.create(author=author52,
+                                 title='The Home Edit Workbook: Prompts, Activities, and Gold Stars to Help You Contain the Chaos',
+                                 price='17.99',
+                                 first_published=2021,
+                                 description='lea Shearer and Joanna Teplin are back with a fun, practical workbook to jumpstart your home organization. Here are 52 challenges for every room—from clearing out a junk drawer to measuring your cabinet for storage bins to arranging the apps on your phone by color. ',
+                                 url='https://prodimage.images-bn.com/pimages/9780593139820_p0_v13_s550x406.jpg')
+    book96.category.set([parent2, category15])
+
+    book97 = Book.objects.create(author=author53,
+                                 title='Floret Farm\'s Cut Flower Garden: Grow, Harvest, and Arrange Stunning Seasonal Blooms',
+                                 price='30.99',
+                                 first_published=2017,
+                                 description='A stunning flower book: This beautiful gardening book and guide to growing, harvesting, and arranging gorgeous blooms year round provides readers with vital tools to nurture a stunning flower garden and use their blossoms and cut flowers to create show stopping arrangements. It makes a beautiful gift for any occasion, for friends, loved ones and gardening lovers alike!',
+                                 url='https://prodimage.images-bn.com/pimages/9781452145761_p0_v1_s550x406.jpg')
+    book97.category.set([parent2, category15])
+
+    # book98 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book98.category.set([parent2, category1])
+    #
+    # book99 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book99.category.set([parent2, category1])
+    #
+    # book100 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book100.category.set([parent2, category1])
+    #
+    # book101 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book101.category.set([parent2, category1])
+    #
+    # book102 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book102.category.set([parent2, category1])
+    #
+    # book103 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book103.category.set([parent2, category1])
+    #
+    # book104 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book104.category.set([parent2, category1])
+    #
+    # book105 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book105.category.set([parent2, category1])
+    #
+    # boo106 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book106.category.set([parent2, category1])
+    #
+    # book107 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book107.category.set([parent2, category1])
+    #
+    # book108 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book108.category.set([parent2, category1])
+    #
+    # book109 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book109.category.set([parent2, category1])
+    #
+    # book110 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book110.category.set([parent2, category1])
+    #
+    #
+    # book111 = Book.objects.create(author=author,
+    #                              title='',
+    #                              price='',
+    #                              first_published=,
+    #                              description='',
+    #                              url='')
+    # book111.category.set([parent2, category1])
 
 class Migration(migrations.Migration):
     dependencies = [
