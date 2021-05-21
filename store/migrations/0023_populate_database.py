@@ -95,6 +95,17 @@ def populate_database(apps, schema_editor):
     author52 = Author.objects.create(name='Clea', surname='Shearer')
     author53 = Author.objects.create(name='Erin', surname='Benzakein')
     author54 = Author.objects.create(name='Josh', surname='Hawley')
+    author55 = Author.objects.create(name=' Zaretta', surname='L. Hammond')
+    author56 = Author.objects.create(name=' Daniel', surname='T. Willingham')
+    author57 = Author.objects.create(name=' Ryan', surname='Serhant')
+    author58 = Author.objects.create(name='Brian', surname='Tracy')
+    author59 = Author.objects.create(name='Eric', surname='Goodman')
+    author60 = Author.objects.create(name='Robert', surname='Donald Cooley')
+    author61 = Author.objects.create(name='Suzanne', surname='Schlosberg')
+    author62 = Author.objects.create(name='Scott ', surname='Woolley')
+    author63 = Author.objects.create(name=' Svetlana', surname='Alexievich')
+    author64 = Author.objects.create(name='Gretchen', surname='McCulloch')
+    author65 = Author.objects.create(name='Kenneth ', surname='Alfano')
 
 
     # Books
@@ -908,118 +919,303 @@ def populate_database(apps, schema_editor):
                                  url='https://prodimage.images-bn.com/pimages/9781452145761_p0_v1_s550x406.jpg')
     book97.category.set([parent2, category15])
 
-    # book98 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book98.category.set([parent2, category1])
+    book98 = Book.objects.create(author=author55,
+                                 title='Culturally Responsive Teaching and The Brain',
+                                 price='39.99',
+                                 first_published=2014,
+                                 description='In this book, Zaretta Hammond draws on cutting-edge neuroscience research to offer an innovative approach for designing and implementing brain-compatible culturally responsive instruction.',
+                                 url='https://prodimage.images-bn.com/pimages/9781483308012_p0_v2_s550x406.jpg')
+    book98.category.set([parent2, category16])
+
+    book99 = Book.objects.create(author=author56,
+                                 title='Why Don\'t Students Like School?:A Cognitive Scientist Answers Questions About How the Mind Works and What It Means for the Classroom',
+                                 price='25.99',
+                                 first_published=2021,
+                                 description='Why Students Don’t Like School is a valuable resource for both veteran and novice teachers, teachers-in-training, and for the principals, administrators, and staff development professionals who work with them.',
+                                 url='https://prodimage.images-bn.com/pimages/9781119715665_p0_v1_s550x406.jpg')
+    book99.category.set([parent2, category16])
+
+    book100 = Book.objects.create(author=author56,
+                                 title='Raising Kids Who Read: What Parents and Teachers Can Do',
+                                 price='29.99',
+                                 first_published=2015,
+                                 description='In Raising Kids Who Read, bestselling author and psychology professor Daniel T. Willingham explains this phenomenon and provides practical solutions for engendering a love of reading that lasts into adulthood. Like Willingham\'s much-lauded previous work, Why Don\'t Students Like School?, this new book combines evidence-based analysis with engaging, insightful recommendations for the future. Intellectually rich argumentation is woven seamlessly with entertaining current cultural references, examples, and steps for taking action to encourage reading.',
+                                 url='https://prodimage.images-bn.com/pimages/9781118769720_p0_v3_s550x406.jpg')
+    book100.category.set([parent2, category16])
+
+    book101 = Book.objects.create(author=author56,
+                                 title='Cognition: The Thinking Animal',
+                                 price='60.99',
+                                 first_published=2019,
+                                 description='This book shows how we can discover the answers to key questions about the mind, such as: "Can we focus attention on more than one thing?" and "Is language unique to humans?" Written in a down-to-earth narrative prose that avoids jargon, addresses the reader directly and draws on the authors\' unique style (\'suppose Willingham split his pants at a junior high dance …\'), this text takes complex experiments in cognitive psychology and describes them for undergraduate students.',
+                                 url='https://prodimage.images-bn.com/pimages/9781108694902_p0_v1_s550x406.jpg')
+    book101.category.set([parent2, category16])
+
+    book102 = Book.objects.create(author=author56,
+                                 title='Cognition: The Thinking Animal / Edition 3',
+                                 price='180.99',
+                                 first_published=2006,
+                                 description='This book applies the clear and approachable prose style towards building foundational knowledge in cognitive psychology for undergraduates.',
+                                 url='https://prodimage.images-bn.com/pimages/9780131736887_p0_v1_s550x406.jpg')
+    book102.category.set([parent2, category16])
+
+    book103 = Book.objects.create(author=author57,
+                                 title='Big Money Energy: How to Rule at Work, Dominate at Life, and Make Millions',
+                                 price='30.99',
+                                 first_published=2021,
+                                 description='Big Money Energy is the feeling you get when you encounter someone who is massively succeeding at life. They\'re the ultimate picture of self-confidence. There\'s no bravado, no bragging — they know they have BME and so does everyone else. You get Big Money Energy by being 100% committed to making your vision a reality . . . and that vision has to be BIG. ',
+                                 url='https://prodimage.images-bn.com/pimages/9780306924705_p0_v2_s550x406.jpg')
+    book103.category.set([parent2, category17])
+
+    book104 = Book.objects.create(author=author57,
+                                 title='Sell It Like Serhant: How to Sell More, Earn More, and Become the Ultimate Sales Machine',
+                                 price='25.99',
+                                 first_published=2019,
+                                 description='Through useful lessons, lively stories, and vivid examples, this book shows you how to employ Serhant\'s principles to increase profits and achieve success. Your measure of a good day will no longer depend on one deal or one client, wondering what comes next; the next deal is already happening. And Serhant\'s practical guidance will show you how to juggle multiple deals at once and close all of them EVERY. SINGLE. TIME. ',
+                                 url='https://prodimage.images-bn.com/pimages/9780316449588_p0_v3_s550x406.jpg')
+    book104.category.set([parent2, category17])
+
+    book105 = Book.objects.create(author=author58,
+                                 title='Million Dollar Habits: Proven Power Practices to Double and Triple Your Income',
+                                 price='25.99',
+                                 first_published=2017,
+                                 description='In Million Dollar Habits, Tracy teaches readers how to develop the habits of successful men and women so they too can think more effectively, make better decisions, and ultimately double or triple their income. Readers will learn how to organize their finances, increase health and vitality, sustain loving relationships, build financial independence, and take a leadership role to turn visions into reality.',
+                                 url='https://prodimage.images-bn.com/pimages/9781599186146_p0_v1_s550x406.jpg')
+    book105.category.set([parent2, category17])
+
+    book106 = Book.objects.create(author=author58,
+                                 title='The Psychology of Selling: Increase Your Sales Faster and Easier than You Ever Thought Possible',
+                                 price='17.99',
+                                 first_published=2006,
+                                 description='The purpose of this book is to give you a series of ideas, methods, strategies, and techniques that you can use immediately to make more sales, faster and easier than ever before.',
+                                 url='https://prodimage.images-bn.com/pimages/9780785288060_p0_v9_s550x406.jpg')
+    book106.category.set([parent2, category17])
+
+    book107 = Book.objects.create(author=author58,
+                                 title='No Excuses!',
+                                 price='15.99',
+                                 first_published=2012,
+                                 description='No Excuses! shows you how you can achieve success in all three major areas of your life: Your personal goals, your business and money goals and your overall happiness.',
+                                 url='https://prodimage.images-bn.com/pimages/9781606711361_p0_v1_s550x406.jpg')
+    book107.category.set([parent2, category17])
+
+    book108 = Book.objects.create(author=author59,
+                                 title='True to Form: How to Use Foundation Training for Sustained Pain Relief and Everyday Fitness',
+                                 price='10.99',
+                                 first_published=2016,
+                                 description='True to Form shows readers how to successfully integrate these powerful movements into everyday life—from playing with the kids to washing dishes to long hours in the office—transforming ordinary physical actions into active and mindful movements that help to eliminate pain, up your game, or simply feel more energetic. True to Form shows you how to move better, breathe better, and get back to using your body the way nature intended.',
+                                 url='https://prodimage.images-bn.com/pimages/9780062315335_p0_v6_s550x406.jpg')
+    book108.category.set([parent2, category18])
+
+    book109 = Book.objects.create(author=author59,
+                                 title='Foundation: Redefine Your Core, Conquer Back Pain, and Move with Confidence',
+                                 price='25.99',
+                                 first_published=2011,
+                                 description='Foundation by Dr. Eric Goodman and Peter Park shifts the training focus from the front of your body to the back. By strengthening the full posterior chain and correcting poor movement patterns, you will maximize power, flexibility, and endurance and say goodbye to back pain.',
+                                 url='https://prodimage.images-bn.com/pimages/9781609611002_p0_v3_s550x406.jpg')
+    book109.category.set([parent2, category18])
+
+    book110 = Book.objects.create(author=author60,
+                                 title='The Genius of Flexibility: The Smart Way to Stretch and Strengthen Your Body',
+                                 price='25.99',
+                                 first_published=2005,
+                                 description='Genius of Flexibility presents a 16-step stretching regimen for unique muscle groups that dramatically improves flexibility and strength while improving physiological and psychological health.',
+                                 url='https://prodimage.images-bn.com/pimages/9780743270878_p0_v1_s550x406.jpg')
+    book110.category.set([parent2, category18])
+
+
+    book111 = Book.objects.create(author=author61,
+                                 title='Fitness For Dummies',
+                                 price='21.99',
+                                 first_published=2010,
+                                 description='Fitness For Dummies, 4th Edition, provides the latest information and advice for properly shaping, conditioning, and strengthening your body to enhance overall fitness and health. With the help of fitness professionals Suzanne Schlosberg and Liz Neporent, you\'ll learn to set and achieve realistic fitness goals without expensive fitness club fees!',
+                                 url='https://prodimage.images-bn.com/pimages/9780470767597_p0_v1_s550x406.jpg')
+    book111.category.set([parent2, category18])
+
+    book112 = Book.objects.create(author=author61,
+                                  title='The Ultimate Workout Log: An Exercise Diary for Everyone',
+                                  price='15.99',
+                                  first_published=2012,
+                                  description='The Ultimate Workout Log is an easy-to-use diary and goal tracker with a unique format and six months’ worth of space to record training routines and accomplishments. Ever popular and endlessly useful, the log makes it easy for users to note cardio, strength, and flexibility and balance workouts, while also including space for nutrition notations.',
+                                  url='https://prodimage.images-bn.com/pimages/9780547592121_p0_v2_s550x406.jpg')
+    book112.category.set([parent2, category18])
+
+    book113 = Book.objects.create(author=author62,
+                                  title='The Network: The Battle for the Airwaves and the Birth of the Communications Age',
+                                  price='17.99',
+                                  first_published=2017,
+                                  description='The astonishing story of America’s airwaves, the two friends—one a media mogul, the other a famous inventor—who made them available to us, and the government which figured out how to put a price on air.This is the origin story of the airwaves—the foundational technology of the communications age—as told through the forty-year friendship of an entrepreneurial industrialist and a brilliant inventor.',
+                                  url='https://prodimage.images-bn.com/pimages/9780062242761_p0_v2_s550x406.jpg')
+    book113.category.set([parent2, category19])
+
+    book114 = Book.objects.create(author=author63,
+                                  title='Voices from Chernobyl: The Oral History of a Nuclear Disaster',
+                                  price='19.99',
+                                  first_published=2019,
+                                  description='Chernobyl is the first book to present personal accounts of the tragedy. Journalist Svetlana Alexievich interviewed hundreds of people affected by the meltdown—from innocent citizens to firefighters to those called in to clean up the disaster—and their stories reveal the fear, anger, and uncertainty with which they still live. Comprised of interviews in monologue form, Voices from Chernobyl is a crucially important work, unforgettable in its emotional power and honesty.',
+                                  url='https://prodimage.images-bn.com/pimages/9781628973303_p0_v1_s550x406.jpg')
+    book114.category.set([parent2, category19])
+
+    book115 = Book.objects.create(author=author63,
+                                  title='Secondhand Time: The Last of the Soviets',
+                                  price='17.99',
+                                  first_published=2017,
+                                  description='A magnificent tapestry of the sorrows and triumphs of the human spirit woven by a master, Secondhand Time tells the stories that together make up the true history of a nation. “Through the voices of those who confided in her,” The Nation writes, “Alexievich tells us about human nature, about our dreams, our choices, about good and evil—in a word, about ourselves.”',
+                                  url='https://prodimage.images-bn.com/pimages/9780399588822_p0_v3_s550x406.jpg')
+    book115.category.set([parent2, category19])
+
+    book116 = Book.objects.create(author=author64,
+                                  title='Because Internet: Understanding the New Rules of Language',
+                                  price='19.99',
+                                  first_published=2020,
+                                  description='Because Internet is for anyone who\'s ever puzzled over how to punctuate a text message or wondered where memes come from. It\'s the perfect book for understanding how the internet is changing the English language, why that\'s a good thing, and what our online interactions reveal about who we are. ',
+                                  url='https://prodimage.images-bn.com/pimages/9780735210943_p0_v1_s550x406.jpg')
+    book116.category.set([parent2, category19])
+
+    book117 = Book.objects.create(author=author65,
+                                  title='Introduction to Engineering Design',
+                                  price='29.99',
+                                  first_published=2017,
+                                  description='Introduction to Engineering Design: A Conceptual Overview provides a basic overview of the process of engineering design – the "heart" of engineering – in a broadly accessible manner that assumes no specialized knowledge. Relevant for wide range of engineering disciplines, it establishes a core framework for understanding the fundamentals while briefly touching on various other related points to put them in context (often via footnotes, which may link to external resources for further information).',
+                                  url='https://prodimage.images-bn.com/pimages/2940160843841_p0_v1_s550x406.jpg')
+    book117.category.set([parent2, category19])
+
+    # book118 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book118.category.set([parent2, category1])
     #
-    # book99 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book99.category.set([parent2, category1])
+    # book119 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book119.category.set([parent2, category1])
     #
-    # book100 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book100.category.set([parent2, category1])
+    # book120 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book120.category.set([parent2, category1])
     #
-    # book101 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book101.category.set([parent2, category1])
+    # book121 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book121.category.set([parent2, category1])
     #
-    # book102 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book102.category.set([parent2, category1])
+    # book122 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book122.category.set([parent2, category1])
     #
-    # book103 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book103.category.set([parent2, category1])
+    # book123 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book123.category.set([parent2, category1])
     #
-    # book104 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book104.category.set([parent2, category1])
+    # book124 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book124.category.set([parent2, category1])
     #
-    # book105 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book105.category.set([parent2, category1])
+    # book125 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book125.category.set([parent2, category1])
     #
-    # boo106 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book106.category.set([parent2, category1])
+    # book126 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book126.category.set([parent2, category1])
     #
-    # book107 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book107.category.set([parent2, category1])
+    # book127 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book127.category.set([parent2, category1])
     #
-    # book108 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book108.category.set([parent2, category1])
+    # book128 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book128.category.set([parent2, category1])
     #
-    # book109 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book109.category.set([parent2, category1])
+    # book129 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book129.category.set([parent2, category1])
     #
-    # book110 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book110.category.set([parent2, category1])
+    # book130 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book130.category.set([parent2, category1])
     #
+    # book131 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book131.category.set([parent2, category1])
     #
-    # book111 = Book.objects.create(author=author,
-    #                              title='',
-    #                              price='',
-    #                              first_published=,
-    #                              description='',
-    #                              url='')
-    # book111.category.set([parent2, category1])
+    # book132 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book132.category.set([parent2, category1])
+    #
+    # book133 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book133.category.set([parent2, category1])
+    #
+    # book134 = Book.objects.create(author=author,
+    #                               title='',
+    #                               price='',
+    #                               first_published=,
+    #                               description='',
+    #                               url='')
+    # book134.category.set([parent2, category1])
+
 
 class Migration(migrations.Migration):
     dependencies = [
